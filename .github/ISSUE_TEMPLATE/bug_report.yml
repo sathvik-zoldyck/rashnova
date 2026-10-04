@@ -1,0 +1,69 @@
+name: Bug report
+description: Something in Rashnova does not work as it should.
+title: "Bug: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for taking the time to report this.
+
+        **This issue is public.** Never paste your record, a report, file names, folder names,
+        account names or anything personal. If we need more detail, we will ask you privately.
+
+        **A security problem?** Do not use this form: see the
+        [security policy](https://github.com/sathvik-zoldyck/rashnova/blob/main/SECURITY.md).
+  - type: input
+    id: version
+    attributes:
+      label: Rashnova version
+      description: Shown in Settings, or in Windows under Installed apps.
+      placeholder: "1.1.0"
+    validations:
+      required: true
+  - type: input
+    id: windows
+    attributes:
+      label: Windows version
+      description: "Win + R, type winver, press Enter."
+      placeholder: "Windows 10 Pro 22H2"
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Where did it happen?
+      options:
+        - Installing or uninstalling
+        - Repair Mode (a session)
+        - Session summary or report
+        - The weekly Readout
+        - Always-on recording
+        - PIN
+        - Settings
+        - Something else
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened, and what did you expect?
+      description: Describe it in your own words, without personal details.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to make it happen again
+      placeholder: |
+        1. Repair Mode > Activate
+        2. ...
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you send
+      options:
+        - label: I checked the known limits, and this is not one of them.
+          required: true
+        - label: I removed everything personal from this report.
+          required: true

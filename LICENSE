@@ -1,0 +1,42 @@
+Rashnova Software License Agreement
+
+Copyright 2026 Alcyone Secure. All rights reserved.
+
+IMPORTANT: READ BEFORE INSTALLING
+
+This End User License Agreement ("Agreement") is a legal agreement between you ("User") and Alcyone Secure ("Company") for the Rashnova forensic monitoring software ("Software").
+
+1. LICENSE GRANT
+
+Subject to this Agreement, the Company grants you a non-exclusive, non-transferable license to install and use the Software on devices you own or control.
+
+2. RESTRICTIONS
+
+You may not: (a) copy or distribute the Software; (b) reverse engineer or decompile; (c) use for unlawful surveillance or in violation of applicable laws; (d) remove copyright or proprietary notices.
+
+3. MONITORING DISCLAIMER
+
+Rashnova is designed for lawful computer monitoring of devices you own or are authorised to monitor. The user is solely responsible for ensuring compliance with all applicable local, state, and federal privacy and wiretapping laws before deploying this software.
+
+4. DISCLAIMER OF WARRANTIES
+
+THE SOFTWARE IS PROVIDED "AS IS" WITHOUT WARRANTY OF ANY KIND. THE COMPANY EXPRESSLY DISCLAIMS ALL WARRANTIES, EXPRESS OR IMPLIED.
+
+5. LIMITATION OF LIABILITY
+
+ALCYONE SECURE SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, OR CONSEQUENTIAL DAMAGES ARISING FROM USE OF THE SOFTWARE.
+
+6. TERMINATION
+
+This license terminates automatically if you breach any term. Upon termination, you must destroy all copies of the Software.
+
+By clicking "I Agree", you accept the terms of this Agreement.
+
+----------------------------------------------------------------------------------------------
+
+About this file. The agreement above is the licence shipped inside the Rashnova installer
+(Rashnova-*.msi). Rashnova-Setup-*.exe asks you to accept the terms published at
+https://www.alcyonesecure.com/terms, which govern your use of Rashnova.
+
+The documents and images in this repository are Copyright 2026 Alcyone Secure. All rights
+reserved. Rashnova's source code is not published.

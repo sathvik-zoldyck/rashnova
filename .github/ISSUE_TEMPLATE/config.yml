@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security vulnerability
+    url: https://github.com/sathvik-zoldyck/rashnova/security/advisories/new
+    about: Please report security problems privately, never in a public issue.
+  - name: Get help
+    url: https://github.com/sathvik-zoldyck/rashnova/blob/main/SUPPORT.md
+    about: Questions about installing or using Rashnova, or write to support@alcyonesecure.com.
+  - name: Known limits
+    url: https://github.com/sathvik-zoldyck/rashnova/blob/main/KNOWN_LIMITS.md
+    about: What Rashnova does not do, or does not do yet. Please check before reporting.

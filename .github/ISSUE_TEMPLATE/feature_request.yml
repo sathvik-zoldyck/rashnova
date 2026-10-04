@@ -1,0 +1,23 @@
+name: Suggestion
+description: An idea that would make Rashnova more useful to you.
+title: "Suggestion: "
+labels: ["suggestion"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Tell us what you need it to do, and why. We read every suggestion.
+        **This issue is public:** please keep personal details out of it.
+  - type: textarea
+    id: need
+    attributes:
+      label: What would you like Rashnova to do?
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why does it matter to you?
+      description: The situation you are in, for example handing a laptop to a repair shop.
+    validations:
+      required: true
