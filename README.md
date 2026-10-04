@@ -10,8 +10,8 @@
 
 [![Latest release](https://img.shields.io/github/v/release/sathvik-zoldyck/rashnova?style=flat-square&label=release&labelColor=111111&color=F25C05)](https://github.com/sathvik-zoldyck/rashnova/releases/latest)
 [![Downloads](https://img.shields.io/github/downloads/sathvik-zoldyck/rashnova/total?style=flat-square&labelColor=111111&color=F25C05)](https://github.com/sathvik-zoldyck/rashnova/releases)
-[![Platform](https://img.shields.io/badge/Windows-10%20%7C%2011%20%28x64%29-F25C05?style=flat-square&labelColor=111111)](#system-requirements)
-[![Price](https://img.shields.io/badge/price-free-F25C05?style=flat-square&labelColor=111111)](#download-and-install)
+[![Platform](https://img.shields.io/badge/Windows-10%20%7C%2011%20%28x64%29-F25C05?style=flat-square&labelColor=111111)](#requirements)
+[![Price](https://img.shields.io/badge/price-free-F25C05?style=flat-square&labelColor=111111)](#download)
 [![Licence](https://img.shields.io/badge/licence-proprietary-555555?style=flat-square&labelColor=111111)](LICENSE)
 
 [**Download**](https://github.com/sathvik-zoldyck/rashnova/releases/latest) ·
@@ -22,7 +22,10 @@
 
 </div>
 
+> **Languages** &nbsp;·&nbsp; **English** · [हिन्दी](README.hi.md) · [ಕನ್ನಡ](README.kn.md) · [മലയാളം](README.ml.md) · [Español](README.es.md) · [Français](README.fr.md) · [Deutsch](README.de.md) · [Português](README.pt.md) · [日本語](README.ja.md) · [Bahasa Indonesia](README.id.md) · [עברית](README.he.md)
+
 ---
+
 
 Rashnova records what happens on a Windows PC while someone else has it: at a repair shop, at an
 IT desk, or with anyone you hand it to. Start a **Repair session** before the handover. When the PC
@@ -33,25 +36,28 @@ Every entry is sealed to the one before it, so the record shows if anything in i
 removed, and it shows every stretch where nothing could be recorded. Everything stays on your
 computer. No account, no cloud, no telemetry.
 
+
 > [!NOTE]
 > This repository is where Rashnova is **released**: installers, release notes, known limits and
 > security policy. Rashnova is proprietary software by [Alcyone Secure](https://www.alcyonesecure.com);
 > its source code is not published here.
 
+
 ## Contents
 
-- [Why Rashnova exists](#why-rashnova-exists)
+- [Why Rashnova exists](#why)
 - [What it does](#what-it-does)
-- [What it never records](#what-it-never-records)
-- [How it works](#how-it-works)
-- [Download and install](#download-and-install)
-- [System requirements](#system-requirements)
+- [What it never records](#never)
+- [How it works](#how)
+- [Download and install](#download)
+- [System requirements](#requirements)
 - [Privacy](#privacy)
-- [Known limits](#known-limits)
+- [Known limits](#limits)
 - [Updates](#updates)
-- [Support and security](#support-and-security)
+- [Support and security](#support)
 - [Licence](#licence)
 
+<a name="why"></a>
 ## Why Rashnova exists
 
 Aircraft, trains and ships carry a black box. A computer that leaves your hands carries nothing,
@@ -68,6 +74,7 @@ about.
 
 > *Trust is good. Proof is better.*
 
+<a name="what-it-does"></a>
 ## What it does
 
 <table>
@@ -148,6 +155,7 @@ file activity (Monitor Now), or open the last report.
 
 <sub>Screenshots show Rashnova with a sample session (a fictional user, "Riya").</sub>
 
+<a name="never"></a>
 ## What it never records
 
 Rashnova records **that** something happened, not what was on the screen. It does not record:
@@ -166,15 +174,14 @@ browser opened from a link shows that link.
 A report says, for example, that `Bank_Statement_Aug2026.pdf` was opened from
 `Documents\Finance` by Microsoft Edge at 15:01:16. It does not say what the statement contained.
 
+<a name="how"></a>
 ## How it works
 
-```text
- 1  Install         Setup installs Rashnova and its background recorder.
- 2  Set a PIN       The PIN is checked by the recorder, not by the app window.
- 3  Before handover Repair Mode > Activate > PIN.
- 4  Hand it over    Everything in "What it does" is written to a sealed record.
- 5  Get it back     Deactivate > PIN. You get a verdict, a report and the chain check.
-```
+1. **Install.** Setup installs Rashnova and its background recorder.
+2. **Set a PIN.** The PIN is checked by the recorder, not by the app window.
+3. **Before the handover:** **Repair Mode > Activate**, then your PIN.
+4. **Hand it over.** Everything in "What it does" is written to a sealed record.
+5. **Get it back:** **Deactivate**, then your PIN. You get a verdict, a report and the chain check.
 
 The recorder runs as a Windows service, so it keeps recording whether or not anyone opens the
 Rashnova window, and it starts again on its own after a restart.
@@ -188,6 +195,7 @@ Rashnova window, and it starts again on its own after a restart.
 | **Compromised** | The record has a gap inside the session (the computer was off, asleep or restarting, or monitoring was interrupted) or shows interference, so it cannot vouch for the whole session. |
 | **Chain broken** | The record does not verify. Everything is still shown, marked as unverified. |
 
+<a name="download"></a>
 ## Download and install
 
 | File | Use it for |
@@ -209,18 +217,22 @@ Rashnova window, and it starts again on its own after a restart.
 5. Set a PIN, and choose whether to keep session-only recording (the default) or switch on
    always-on recording.
 
+
 > [!IMPORTANT]
 > A forgotten PIN cannot be recovered, by us or anyone else. Write it down somewhere safe.
 > Switching always-on recording off never needs the PIN.
 
+
 **Coming from BlackBox 1.0.1?** Rashnova is BlackBox's new name. Download and install 1.1.0.
 
+<a name="requirements"></a>
 ## System requirements
 
 - Windows 10 or Windows 11, 64-bit (tested on Windows 10)
 - Microsoft .NET 8 Desktop Runtime (Setup installs it if it is missing)
 - Administrator approval to install, because the recorder runs as a Windows service
 
+<a name="privacy"></a>
 ## Privacy
 
 - **Local only.** The record is written and kept on your computer. There is no account and no
@@ -237,6 +249,7 @@ Rashnova window, and it starts again on its own after a restart.
   Windows' PowerShell script logging, and records what the setting was before. It never switches
   off a setting someone else turned on.
 
+<a name="limits"></a>
 ## Known limits
 
 We publish what Rashnova does not do, so you can decide with the facts. The most important:
@@ -250,12 +263,14 @@ We publish what Rashnova does not do, so you can decide with the facts. The most
 
 The full list, with the reason for each and what is planned: **[KNOWN_LIMITS.md](KNOWN_LIMITS.md)**.
 
+<a name="updates"></a>
 ## Updates
 
 Once a day Rashnova checks alcyonesecure.com for a newer version and tells you when there is one.
 You download and install it yourself; your record, PIN and settings are kept. Every version is
 published here, with its release notes and SHA-256. See the [changelog](CHANGELOG.md).
 
+<a name="support"></a>
 ## Support and security
 
 - **Help:** see [SUPPORT.md](SUPPORT.md), or write to **support@alcyonesecure.com**.
@@ -263,6 +278,7 @@ published here, with its release notes and SHA-256. See the [changelog](CHANGELO
   post your record, file names or anything personal in an issue.
 - **Security vulnerabilities:** do not open a public issue. Follow [SECURITY.md](SECURITY.md).
 
+<a name="licence"></a>
 ## Licence
 
 Rashnova is proprietary software, free for use on devices you own or are authorised to monitor.
@@ -275,7 +291,7 @@ in this repository are © Alcyone Secure.
 
 <img src="assets/alcyone-owl.png" alt="Alcyone Secure" width="40">
 
-**Alcyone Secure** · Built in India · [alcyonesecure.com](https://www.alcyonesecure.com)
+**Alcyone Secure** · Built in Bengaluru, India · [alcyonesecure.com](https://www.alcyonesecure.com)
 
 *Security is not just prevention. Security is accountability.*
 
