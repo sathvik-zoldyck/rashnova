@@ -287,7 +287,7 @@ Os documentos e imagens deste repositório são © Alcyone Secure.
 
 <div align="center">
 
-<img src="assets/alcyone-owl.png" alt="Alcyone Secure" width="40">
+<img src="assets/rashnova-icon.png" alt="Rashnova" width="72">
 
 **Alcyone Secure** · Feito em Bengaluru, Índia · [alcyonesecure.com](https://www.alcyonesecure.com)
 

@@ -280,7 +280,7 @@ Rashnova הוא תוכנה קניינית, חינמית לשימוש במכשי�
 
 <div align="center">
 
-<img src="assets/alcyone-owl.png" alt="Alcyone Secure" width="40">
+<img src="assets/rashnova-icon.png" alt="Rashnova" width="72">
 
 **Alcyone Secure** · נבנה בבנגלור, הודו · [alcyonesecure.com](https://www.alcyonesecure.com)
 

@@ -288,7 +288,7 @@ valen). Los documentos e imágenes de este repositorio son © Alcyone Secure.
 
 <div align="center">
 
-<img src="assets/alcyone-owl.png" alt="Alcyone Secure" width="40">
+<img src="assets/rashnova-icon.png" alt="Rashnova" width="72">
 
 **Alcyone Secure** · Hecho en Bengaluru, India · [alcyonesecure.com](https://www.alcyonesecure.com)
 

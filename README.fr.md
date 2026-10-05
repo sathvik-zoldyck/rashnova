@@ -292,7 +292,7 @@ foi). Les documents et images de ce dépôt sont © Alcyone Secure.
 
 <div align="center">
 
-<img src="assets/alcyone-owl.png" alt="Alcyone Secure" width="40">
+<img src="assets/rashnova-icon.png" alt="Rashnova" width="72">
 
 **Alcyone Secure** · Conçu à Bengaluru, Inde · [alcyonesecure.com](https://www.alcyonesecure.com)
 

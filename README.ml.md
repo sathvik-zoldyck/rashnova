@@ -290,7 +290,7 @@ Rashnova ഉടമസ്ഥതയിലുള്ള സോഫ്റ്റ്‌�
 
 <div align="center">
 
-<img src="assets/alcyone-owl.png" alt="Alcyone Secure" width="40">
+<img src="assets/rashnova-icon.png" alt="Rashnova" width="72">
 
 **Alcyone Secure** · ബെംഗളൂരു, ഇന്ത്യയിൽ നിർമ്മിച്ചത് · [alcyonesecure.com](https://www.alcyonesecure.com)
 

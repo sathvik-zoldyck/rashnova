@@ -286,7 +286,7 @@ Rashnova मालिकाना सॉफ़्टवेयर है, उन 
 
 <div align="center">
 
-<img src="assets/alcyone-owl.png" alt="Alcyone Secure" width="40">
+<img src="assets/rashnova-icon.png" alt="Rashnova" width="72">
 
 **Alcyone Secure** · बेंगलुरु, भारत में निर्मित · [alcyonesecure.com](https://www.alcyonesecure.com)
 

@@ -289,7 +289,7 @@ Rashnova ಸ್ವಾಮ್ಯದ ಸಾಫ್ಟ್‌ವೇರ್; ನಿಮ�
 
 <div align="center">
 
-<img src="assets/alcyone-owl.png" alt="Alcyone Secure" width="40">
+<img src="assets/rashnova-icon.png" alt="Rashnova" width="72">
 
 **Alcyone Secure** · ಬೆಂಗಳೂರು, ಭಾರತದಲ್ಲಿ ನಿರ್ಮಿತ · [alcyonesecure.com](https://www.alcyonesecure.com)
 
