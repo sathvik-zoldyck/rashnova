@@ -3,6 +3,36 @@
 Every released version of Rashnova, newest first. Installers and their SHA-256 are attached to
 each [release](https://github.com/sathvik-zoldyck/rashnova/releases).
 
+## 1.2.1 (2026-10-05)
+
+A fix update for 1.2.0. It closes two ways someone with administrator rights could get around the
+record, and makes uninstalling say what it does. Everything in 1.2.0 stays as it was.
+
+It is still the free local recorder: everything is recorded and kept on your computer, and no
+account is needed.
+
+### Fixed in 1.2.1
+
+- **A stopped recorder no longer passes for a power cut.** Rashnova now also checks Windows' own
+  record of its recorder being stopped. If the recorder was killed and the computer was then
+  switched off at the button, the session reads Compromised, as a stopped recorder should.
+- **USB storage blocking switched off outside Rashnova is caught.** If its setting is changed outside
+  Rashnova, that is recorded as tampering, the setting is put back, and USB storage stays blocked.
+- **Uninstalling says uninstalling.** Every screen shown while Rashnova is removed now says so; none
+  of them says "Install" or "Rashnova is installed" any more.
+- **Upgrading from 1.1.0 tidies up fully.** Removing 1.1.0's old setup entry no longer stops partway
+  if one of its leftover folders cannot be deleted.
+
+### Known limits
+
+See [KNOWN_LIMITS.md](KNOWN_LIMITS.md).
+
+### Upgrading
+
+**From 1.2.0 or 1.1.0:** download and install 1.2.1 over it. Your record, PIN and settings are kept.
+
+**From BlackBox 1.0.1:** Rashnova is BlackBox's new name. Download and install 1.2.1.
+
 ## 1.2.0 (2026-10-05)
 
 Rashnova keeps a sealed, tamper-evident record of what happens on your Windows PC, so you can

@@ -203,13 +203,13 @@ Rashnova window, and it starts again on its own after a restart.
 
 | File | Use it for |
 | --- | --- |
-| **`Rashnova-1.2.0.msi`** | Everyone. Installs Rashnova with its own copy of .NET 10, so nothing else needs installing first. |
+| **`Rashnova-1.2.1.msi`** | Everyone. Installs Rashnova with its own copy of .NET 10, so nothing else needs installing first. |
 | `SHA256SUMS.txt` | The SHA-256 of each file, to check your download. |
 
-1. Download `Rashnova-1.2.0.msi` from the [latest release](https://github.com/sathvik-zoldyck/rashnova/releases/latest). If your browser says the file isn't commonly downloaded, choose **Keep** (the steps for each browser are in [Known limits](KNOWN_LIMITS.md)).
+1. Download `Rashnova-1.2.1.msi` from the [latest release](https://github.com/sathvik-zoldyck/rashnova/releases/latest). If your browser says the file isn't commonly downloaded, choose **Keep** (the steps for each browser are in [Known limits](KNOWN_LIMITS.md)).
 2. **Check the file** (recommended). In PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.0.msi"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.1.msi"
    ```
    The hash must match the one in `SHA256SUMS.txt` and in the release notes, exactly.
 3. Run it. Windows SmartScreen shows **"Windows protected your PC"** with an unknown publisher,
@@ -225,7 +225,7 @@ Rashnova window, and it starts again on its own after a restart.
 > Switching always-on recording off never needs the PIN.
 
 
-**Coming from 1.1.0?** Install 1.2.0 over it; your record, PIN and settings are kept. **Coming from BlackBox 1.0.1?** Rashnova is BlackBox's new name. Download and install 1.2.0.
+**Coming from 1.1.0?** Install 1.2.1 over it; your record, PIN and settings are kept. **Coming from BlackBox 1.0.1?** Rashnova is BlackBox's new name. Download and install 1.2.1.
 
 <a name="requirements"></a>
 ## System requirements

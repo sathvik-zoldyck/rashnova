@@ -1,6 +1,6 @@
-# Rashnova 1.2.0: known limits
+# Rashnova 1.2.1: known limits
 
-What Rashnova 1.2.0 does not do, or does not do yet. Each entry says what the limit is, why, and
+What Rashnova 1.2.1 does not do, or does not do yet. Each entry says what the limit is, why, and
 what is planned. We publish this so you can decide with the facts; if a limit changes, it changes
 here first.
 
@@ -22,7 +22,7 @@ new version is a new file, so it starts with no history.
 publish it, and the warnings fade as people download it.
 
 **Windows only, 64-bit.**
-Rashnova 1.2.0 is built for 64-bit Windows 10 and 11, and has been tested on Windows 10.
+Rashnova 1.2.1 is built for 64-bit Windows 10 and 11, and has been tested on Windows 10.
 It brings its own copy of Microsoft's .NET 10, used only by Rashnova: nothing else is
 downloaded during setup, and nothing else needs to be installed first.
 *Planned:* nothing announced for other systems in this version.
@@ -85,7 +85,7 @@ use other drivers, and a drive already in use keeps the driver it started with.
 
 **Cloud backup, sign-in, recovery from another device, location recording and the paid
 plan.**
-1.2.0 is the free local recorder: everything is recorded and kept on this computer, with no
+1.2.1 is the free local recorder: everything is recorded and kept on this computer, with no
 account. These features appear in Settings as "Coming soon".
 *Planned:* a later version.
 

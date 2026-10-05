@@ -201,13 +201,13 @@ Rashnova が記録するのは、何かが起きた**という事実**であり�
 
 | ファイル | 用途 |
 | --- | --- |
-| **`Rashnova-1.2.0.msi`** | すべての方向け。.NET 10 の専用コピーと一緒に Rashnova をインストールするため、事前に他のものをインストールする必要はありません。 |
+| **`Rashnova-1.2.1.msi`** | すべての方向け。.NET 10 の専用コピーと一緒に Rashnova をインストールするため、事前に他のものをインストールする必要はありません。 |
 | `SHA256SUMS.txt` | 各ファイルの SHA-256。ダウンロードの確認用です。 |
 
-1. [最新リリース](https://github.com/sathvik-zoldyck/rashnova/releases/latest)から `Rashnova-1.2.0.msi` をダウンロードします。ブラウザーが「一般的にダウンロードされていない」ファイルだと表示した場合は **Keep** を選びます（ブラウザーごとの手順は[既知の制限](KNOWN_LIMITS.md)にあります）。
+1. [最新リリース](https://github.com/sathvik-zoldyck/rashnova/releases/latest)から `Rashnova-1.2.1.msi` をダウンロードします。ブラウザーが「一般的にダウンロードされていない」ファイルだと表示した場合は **Keep** を選びます（ブラウザーごとの手順は[既知の制限](KNOWN_LIMITS.md)にあります）。
 2. **ファイルを確認します**（推奨）。PowerShell で：
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.0.msi"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.1.msi"
    ```
    ハッシュが `SHA256SUMS.txt` およびリリースノートのものと完全に一致する必要があります。
 3. 実行します。インストーラーはまだコード署名されていないため、Windows SmartScreen が発行元不明として
@@ -222,7 +222,7 @@ Rashnova が記録するのは、何かが起きた**という事実**であり�
 > 常時記録をオフにするのに PIN は一切不要です。
 
 
-**1.1.0 をお使いですか？** その上に 1.2.0 をインストールしてください。記録、PIN、設定はそのまま残ります。**BlackBox 1.0.1 をお使いでしたか？** Rashnova は BlackBox の新しい名前です。1.2.0 をダウンロードしてインストールしてください。
+**1.1.0 をお使いですか？** その上に 1.2.1 をインストールしてください。記録、PIN、設定はそのまま残ります。**BlackBox 1.0.1 をお使いでしたか？** Rashnova は BlackBox の新しい名前です。1.2.1 をダウンロードしてインストールしてください。
 
 <a name="requirements"></a>
 ## システム要件

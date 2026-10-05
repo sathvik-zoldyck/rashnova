@@ -206,13 +206,13 @@ nicht, und startet nach einem Neustart von selbst wieder.
 
 | Datei | Wofür |
 | --- | --- |
-| **`Rashnova-1.2.0.msi`** | Für alle. Installiert Rashnova mit einer eigenen Kopie von .NET 10, sodass vorher nichts anderes installiert werden muss. |
+| **`Rashnova-1.2.1.msi`** | Für alle. Installiert Rashnova mit einer eigenen Kopie von .NET 10, sodass vorher nichts anderes installiert werden muss. |
 | `SHA256SUMS.txt` | Der SHA-256 jeder Datei, um Ihren Download zu prüfen. |
 
-1. Laden Sie `Rashnova-1.2.0.msi` aus der [neuesten Version](https://github.com/sathvik-zoldyck/rashnova/releases/latest) herunter. Meldet Ihr Browser, dass die Datei nicht häufig heruntergeladen wird, wählen Sie **Keep** (die Schritte für jeden Browser stehen in den [bekannten Grenzen](KNOWN_LIMITS.md)).
+1. Laden Sie `Rashnova-1.2.1.msi` aus der [neuesten Version](https://github.com/sathvik-zoldyck/rashnova/releases/latest) herunter. Meldet Ihr Browser, dass die Datei nicht häufig heruntergeladen wird, wählen Sie **Keep** (die Schritte für jeden Browser stehen in den [bekannten Grenzen](KNOWN_LIMITS.md)).
 2. **Prüfen Sie die Datei** (empfohlen). In PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.0.msi"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.1.msi"
    ```
    Der Hash muss exakt mit dem in `SHA256SUMS.txt` und in den Versionshinweisen übereinstimmen.
 3. Starten Sie sie. Windows SmartScreen zeigt **"Windows protected your PC"** mit unbekanntem Herausgeber an, weil
@@ -228,7 +228,7 @@ nicht, und startet nach einem Neustart von selbst wieder.
 > Das Ausschalten der dauerhaften Aufzeichnung braucht nie die PIN.
 
 
-**Sie kommen von 1.1.0?** Installieren Sie 1.2.0 darüber; Ihr Protokoll, Ihre PIN und Ihre Einstellungen bleiben erhalten. **Sie kommen von BlackBox 1.0.1?** Rashnova ist der neue Name von BlackBox. Laden Sie 1.2.0 herunter und installieren Sie es.
+**Sie kommen von 1.1.0?** Installieren Sie 1.2.1 darüber; Ihr Protokoll, Ihre PIN und Ihre Einstellungen bleiben erhalten. **Sie kommen von BlackBox 1.0.1?** Rashnova ist der neue Name von BlackBox. Laden Sie 1.2.1 herunter und installieren Sie es.
 
 <a name="requirements"></a>
 ## Systemvoraussetzungen

@@ -204,13 +204,13 @@ Rashnova, y vuelve a arrancar solo después de un reinicio.
 
 | Archivo | Para qué |
 | --- | --- |
-| **`Rashnova-1.2.0.msi`** | Para todos. Instala Rashnova con su propia copia de .NET 10, así que no hace falta instalar nada antes. |
+| **`Rashnova-1.2.1.msi`** | Para todos. Instala Rashnova con su propia copia de .NET 10, así que no hace falta instalar nada antes. |
 | `SHA256SUMS.txt` | El SHA-256 de cada archivo, para comprobar tu descarga. |
 
-1. Descarga `Rashnova-1.2.0.msi` de la [última versión](https://github.com/sathvik-zoldyck/rashnova/releases/latest). Si tu navegador dice que el archivo no se descarga con frecuencia, elige **Keep** (los pasos para cada navegador están en los [límites conocidos](KNOWN_LIMITS.md)).
+1. Descarga `Rashnova-1.2.1.msi` de la [última versión](https://github.com/sathvik-zoldyck/rashnova/releases/latest). Si tu navegador dice que el archivo no se descarga con frecuencia, elige **Keep** (los pasos para cada navegador están en los [límites conocidos](KNOWN_LIMITS.md)).
 2. **Comprueba el archivo** (recomendado). En PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.0.msi"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.1.msi"
    ```
    El hash debe coincidir exactamente con el de `SHA256SUMS.txt` y el de las notas de versión.
 3. Ejecútalo. Windows SmartScreen muestra **"Windows protected your PC"** con un editor desconocido, porque el
@@ -226,7 +226,7 @@ Rashnova, y vuelve a arrancar solo después de un reinicio.
 > Desactivar la grabación continua nunca necesita el PIN.
 
 
-**¿Vienes de 1.1.0?** Instala 1.2.0 encima; tu registro, tu PIN y tus ajustes se conservan. **¿Vienes de BlackBox 1.0.1?** Rashnova es el nuevo nombre de BlackBox. Descarga e instala 1.2.0.
+**¿Vienes de 1.1.0?** Instala 1.2.1 encima; tu registro, tu PIN y tus ajustes se conservan. **¿Vienes de BlackBox 1.0.1?** Rashnova es el nuevo nombre de BlackBox. Descarga e instala 1.2.1.
 
 <a name="requirements"></a>
 ## Requisitos del sistema

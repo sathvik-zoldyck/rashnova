@@ -199,13 +199,13 @@ Rashnova מתעד **שמשהו** קרה, לא מה היה על המסך. הוא 
 
 | קובץ | למי |
 | --- | --- |
-| **`Rashnova-1.2.0.msi`** | לכולם. מתקין את Rashnova עם עותק משלו של .NET 10, כך שאין צורך להתקין שום דבר אחר קודם. |
+| **`Rashnova-1.2.1.msi`** | לכולם. מתקין את Rashnova עם עותק משלו של .NET 10, כך שאין צורך להתקין שום דבר אחר קודם. |
 | `SHA256SUMS.txt` | ה-SHA-256 של כל קובץ, לבדיקת ההורדה. |
 
-1. הורידו את `Rashnova-1.2.0.msi` מ[הגרסה האחרונה](https://github.com/sathvik-zoldyck/rashnova/releases/latest). אם הדפדפן אומר שהקובץ אינו מורד לעתים קרובות, בחרו **Keep** (השלבים לכל דפדפן נמצאים ב[מגבלות ידועות](KNOWN_LIMITS.md)).
+1. הורידו את `Rashnova-1.2.1.msi` מ[הגרסה האחרונה](https://github.com/sathvik-zoldyck/rashnova/releases/latest). אם הדפדפן אומר שהקובץ אינו מורד לעתים קרובות, בחרו **Keep** (השלבים לכל דפדפן נמצאים ב[מגבלות ידועות](KNOWN_LIMITS.md)).
 2. **בדקו את הקובץ** (מומלץ). ב-PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.0.msi"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.1.msi"
    ```
    ה-hash חייב להיות זהה בדיוק לזה שב-`SHA256SUMS.txt` ובהערות הגרסה.
 3. הריצו אותו. Windows SmartScreen מציג **"Windows protected your PC"** עם מפרסם לא ידוע, כי קובץ ההתקנה עדיין
@@ -221,7 +221,7 @@ Rashnova מתעד **שמשהו** קרה, לא מה היה על המסך. הוא 
 
 <div dir="rtl">
 
-**מגיעים מ-1.1.0?** התקינו את 1.2.0 מעליו; הרישום, ה-PIN וההגדרות נשמרים. **מגיעים מ-BlackBox 1.0.1?** Rashnova הוא השם החדש של BlackBox. הורידו והתקינו את 1.2.0.
+**מגיעים מ-1.1.0?** התקינו את 1.2.1 מעליו; הרישום, ה-PIN וההגדרות נשמרים. **מגיעים מ-BlackBox 1.0.1?** Rashnova הוא השם החדש של BlackBox. הורידו והתקינו את 1.2.1.
 
 <a name="requirements"></a>
 ## דרישות מערכת

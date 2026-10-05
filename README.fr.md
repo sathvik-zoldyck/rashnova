@@ -206,13 +206,13 @@ Rashnova ou non, et il redémarre tout seul après un redémarrage.
 
 | Fichier | Pour qui |
 | --- | --- |
-| **`Rashnova-1.2.0.msi`** | Tout le monde. Installe Rashnova avec sa propre copie de .NET 10 : rien d'autre à installer avant. |
+| **`Rashnova-1.2.1.msi`** | Tout le monde. Installe Rashnova avec sa propre copie de .NET 10 : rien d'autre à installer avant. |
 | `SHA256SUMS.txt` | Le SHA-256 de chaque fichier, pour vérifier votre téléchargement. |
 
-1. Téléchargez `Rashnova-1.2.0.msi` depuis la [dernière version](https://github.com/sathvik-zoldyck/rashnova/releases/latest). Si votre navigateur indique que le fichier n'est pas souvent téléchargé, choisissez **Keep** (les étapes pour chaque navigateur sont dans les [limites connues](KNOWN_LIMITS.md)).
+1. Téléchargez `Rashnova-1.2.1.msi` depuis la [dernière version](https://github.com/sathvik-zoldyck/rashnova/releases/latest). Si votre navigateur indique que le fichier n'est pas souvent téléchargé, choisissez **Keep** (les étapes pour chaque navigateur sont dans les [limites connues](KNOWN_LIMITS.md)).
 2. **Vérifiez le fichier** (recommandé). Dans PowerShell :
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.0.msi"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.1.msi"
    ```
    Le hash doit correspondre exactement à celui de `SHA256SUMS.txt` et des notes de version.
 3. Lancez-le. Windows SmartScreen affiche **"Windows protected your PC"** avec un éditeur inconnu, car
@@ -228,7 +228,7 @@ Rashnova ou non, et il redémarre tout seul après un redémarrage.
 > Désactiver l'enregistrement permanent ne demande jamais le PIN.
 
 
-**Vous venez de 1.1.0 ?** Installez 1.2.0 par-dessus ; votre registre, votre PIN et vos réglages sont conservés. **Vous venez de BlackBox 1.0.1 ?** Rashnova est le nouveau nom de BlackBox. Téléchargez et installez 1.2.0.
+**Vous venez de 1.1.0 ?** Installez 1.2.1 par-dessus ; votre registre, votre PIN et vos réglages sont conservés. **Vous venez de BlackBox 1.0.1 ?** Rashnova est le nouveau nom de BlackBox. Téléchargez et installez 1.2.1.
 
 <a name="requirements"></a>
 ## Configuration requise

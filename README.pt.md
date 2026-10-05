@@ -203,13 +203,13 @@ não, e volta a iniciar sozinho depois de uma reinicialização.
 
 | Arquivo | Para quem |
 | --- | --- |
-| **`Rashnova-1.2.0.msi`** | Para todos. Instala o Rashnova com a sua própria cópia do .NET 10, então não é preciso instalar mais nada antes. |
+| **`Rashnova-1.2.1.msi`** | Para todos. Instala o Rashnova com a sua própria cópia do .NET 10, então não é preciso instalar mais nada antes. |
 | `SHA256SUMS.txt` | O SHA-256 de cada arquivo, para verificar o seu download. |
 
-1. Baixe `Rashnova-1.2.0.msi` da [versão mais recente](https://github.com/sathvik-zoldyck/rashnova/releases/latest). Se o seu navegador disser que o arquivo não é baixado com frequência, escolha **Keep** (os passos para cada navegador estão nos [limites conhecidos](KNOWN_LIMITS.md)).
+1. Baixe `Rashnova-1.2.1.msi` da [versão mais recente](https://github.com/sathvik-zoldyck/rashnova/releases/latest). Se o seu navegador disser que o arquivo não é baixado com frequência, escolha **Keep** (os passos para cada navegador estão nos [limites conhecidos](KNOWN_LIMITS.md)).
 2. **Verifique o arquivo** (recomendado). No PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.0.msi"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.1.msi"
    ```
    O hash deve ser exatamente igual ao de `SHA256SUMS.txt` e ao das notas de versão.
 3. Execute-o. O Windows SmartScreen mostra **"Windows protected your PC"** com um editor desconhecido, porque o
@@ -224,7 +224,7 @@ não, e volta a iniciar sozinho depois de uma reinicialização.
 > Desligar a gravação contínua nunca pede o PIN.
 
 
-**Vem do 1.1.0?** Instale o 1.2.0 por cima; o seu registro, PIN e configurações são mantidos. **Vem do BlackBox 1.0.1?** Rashnova é o novo nome do BlackBox. Baixe e instale o 1.2.0.
+**Vem do 1.1.0?** Instale o 1.2.1 por cima; o seu registro, PIN e configurações são mantidos. **Vem do BlackBox 1.0.1?** Rashnova é o novo nome do BlackBox. Baixe e instale o 1.2.1.
 
 <a name="requirements"></a>
 ## Requisitos do sistema
