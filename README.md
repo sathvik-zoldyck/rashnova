@@ -155,6 +155,9 @@ file activity (Monitor Now), or open the last report.
 
 <sub>Screenshots show Rashnova with a sample session (a fictional user, "Riya").</sub>
 
+**New in 1.2.0:** Handover Mode, for lending your PC to family, a friend or a colleague, with
+the same sealed report; USB storage blocking; and Start with Windows. See the [changelog](CHANGELOG.md).
+
 <a name="never"></a>
 ## What it never records
 
@@ -177,7 +180,7 @@ A report says, for example, that `Bank_Statement_Aug2026.pdf` was opened from
 <a name="how"></a>
 ## How it works
 
-1. **Install.** Setup installs Rashnova and its background recorder.
+1. **Install.** The installer sets up Rashnova and its background recorder.
 2. **Set a PIN.** The PIN is checked by the recorder, not by the app window.
 3. **Before the handover:** **Repair Mode > Activate**, then your PIN.
 4. **Hand it over.** Everything in "What it does" is written to a sealed record.
@@ -192,7 +195,7 @@ Rashnova window, and it starts again on its own after a restart.
 | --- | --- |
 | **Quiet** | The record verifies, it is complete, and nothing of high importance happened. |
 | **Notable** | At least one high or critical event: worth reading. |
-| **Compromised** | The record has a gap inside the session (the computer was off, asleep or restarting, or monitoring was interrupted) or shows interference, so it cannot vouch for the whole session. |
+| **Compromised** | Rashnova's recorder was stopped while Windows kept running, or the record shows interference, so it cannot vouch for the whole session. A restart, a shutdown or sleep is shown with its length and does not count against the session. |
 | **Chain broken** | The record does not verify. Everything is still shown, marked as unverified. |
 
 <a name="download"></a>
@@ -200,14 +203,13 @@ Rashnova window, and it starts again on its own after a restart.
 
 | File | Use it for |
 | --- | --- |
-| **`Rashnova-Setup-1.1.0.exe`** | Everyone. Installs Microsoft's .NET 8 Desktop Runtime first if your PC doesn't have it, then Rashnova. |
-| `Rashnova-1.1.0.msi` | Administrators deploying with their own tools. Needs the .NET 8 Desktop Runtime already installed. |
+| **`Rashnova-1.2.0.msi`** | Everyone. Installs Rashnova with its own copy of .NET 10, so nothing else needs installing first. |
 | `SHA256SUMS.txt` | The SHA-256 of each file, to check your download. |
 
-1. Download `Rashnova-Setup-1.1.0.exe` from the [latest release](https://github.com/sathvik-zoldyck/rashnova/releases/latest).
+1. Download `Rashnova-1.2.0.msi` from the [latest release](https://github.com/sathvik-zoldyck/rashnova/releases/latest). If your browser says the file isn't commonly downloaded, choose **Keep** (the steps for each browser are in [Known limits](KNOWN_LIMITS.md)).
 2. **Check the file** (recommended). In PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-Setup-1.1.0.exe"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.0.msi"
    ```
    The hash must match the one in `SHA256SUMS.txt` and in the release notes, exactly.
 3. Run it. Windows SmartScreen shows **"Windows protected your PC"** with an unknown publisher,
@@ -223,20 +225,20 @@ Rashnova window, and it starts again on its own after a restart.
 > Switching always-on recording off never needs the PIN.
 
 
-**Coming from BlackBox 1.0.1?** Rashnova is BlackBox's new name. Download and install 1.1.0.
+**Coming from 1.1.0?** Install 1.2.0 over it; your record, PIN and settings are kept. **Coming from BlackBox 1.0.1?** Rashnova is BlackBox's new name. Download and install 1.2.0.
 
 <a name="requirements"></a>
 ## System requirements
 
 - Windows 10 or Windows 11, 64-bit (tested on Windows 10)
-- Microsoft .NET 8 Desktop Runtime (Setup installs it if it is missing)
+- Nothing else: Rashnova brings its own copy of Microsoft .NET 10
 - Administrator approval to install, because the recorder runs as a Windows service
 
 <a name="privacy"></a>
 ## Privacy
 
 - **Local only.** The record is written and kept on your computer. There is no account and no
-  cloud in 1.1.0, and Rashnova sends no usage data.
+  cloud in this version, and Rashnova sends no usage data.
 - **Two small requests,** neither carrying anything from your record: a daily check of
   alcyonesecure.com for a newer version, and, during a Repair session, a check of the time against
   Microsoft's time server.
@@ -245,9 +247,9 @@ Rashnova window, and it starts again on its own after a restart.
   checked. The computer's administrators can still read it.
 - **Tell the people who use your PC.** Always-on recording covers the whole computer, including
   people who never open Rashnova.
-- **A Windows setting, stated plainly.** When recording is first switched on, Rashnova turns on
-  Windows' PowerShell script logging, and records what the setting was before. It never switches
-  off a setting someone else turned on.
+- **A Windows setting, stated plainly.** During a Repair or Handover session, Rashnova turns on
+  Windows' PowerShell script logging, and puts it back as it was when the session ends. It never
+  switches off a setting someone else turned on.
 
 <a name="limits"></a>
 ## Known limits
@@ -257,9 +259,10 @@ We publish what Rashnova does not do, so you can decide with the facts. The most
 - **Nothing can be recorded while the computer is off, asleep or restarting.** The session goes
   on, and the report shows each interruption and its length.
 - **Administrators can read the record.** No program can keep its files from a Windows administrator.
-- **The installer is not code-signed yet,** so Windows SmartScreen warns before it runs.
-- **USB storage blocking is not in 1.1.0.** Every USB drive and every file copied to one is
-  recorded; blocking arrives in an update.
+- **The installer is not code-signed yet,** so your browser and Windows SmartScreen may warn before it runs.
+- **USB storage blocking stops USB drives, not every way to move files.** Phones, SD card slots
+  built into the computer and network drives are not blocked, and a drive already plugged in keeps
+  working until it is unplugged.
 
 The full list, with the reason for each and what is planned: **[KNOWN_LIMITS.md](KNOWN_LIMITS.md)**.
 

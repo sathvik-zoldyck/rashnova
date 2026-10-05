@@ -156,6 +156,9 @@ langsung (Monitor Now), atau buka laporan terakhir.
 
 <sub>Tangkapan layar menampilkan Rashnova dengan sesi contoh (pengguna fiktif, "Riya").</sub>
 
+**Baru di 1.2.0:** Handover Mode, untuk meminjamkan PC Anda kepada keluarga, teman, atau rekan kerja, dengan laporan
+tersegel yang sama; pemblokiran penyimpanan USB; dan Start with Windows. Lihat [catatan perubahan](CHANGELOG.md).
+
 <a name="never"></a>
 ## Yang tidak pernah direkam
 
@@ -178,7 +181,7 @@ Microsoft Edge pada 15:01:16. Laporan tidak menyebutkan isi rekening koran itu.
 <a name="how"></a>
 ## Cara kerjanya
 
-1. **Pasang.** Setup memasang Rashnova dan perekam latarnya.
+1. **Pasang.** Penginstal memasang Rashnova dan perekam latarnya.
 2. **Atur PIN.** PIN diperiksa oleh perekam, bukan oleh jendela aplikasi.
 3. **Sebelum diserahkan:** **Repair Mode > Activate**, lalu PIN Anda.
 4. **Serahkan.** Semua yang ada di "Apa yang dilakukannya" ditulis ke catatan tersegel.
@@ -193,7 +196,7 @@ dan menyala lagi sendiri setelah restart.
 | --- | --- |
 | **Quiet** | Catatan terverifikasi, lengkap, dan tidak ada kejadian berkepentingan tinggi. |
 | **Notable** | Setidaknya satu kejadian tinggi (high) atau kritis (critical): layak dibaca. |
-| **Compromised** | Catatan memiliki celah di dalam sesi (komputer mati, sleep, atau sedang restart, atau pengawasan terputus) atau menunjukkan campur tangan, sehingga tidak bisa menjamin seluruh sesi. |
+| **Compromised** | Perekam Rashnova dihentikan saat Windows tetap berjalan, atau catatan menunjukkan campur tangan, sehingga tidak bisa menjamin seluruh sesi. Restart, shutdown, atau sleep ditampilkan beserta lamanya dan tidak dihitung merugikan sesi. |
 | **Chain broken** | Catatan tidak lolos verifikasi. Semuanya tetap ditampilkan, ditandai belum terverifikasi. |
 
 <a name="download"></a>
@@ -201,14 +204,13 @@ dan menyala lagi sendiri setelah restart.
 
 | File | Untuk |
 | --- | --- |
-| **`Rashnova-Setup-1.1.0.exe`** | Semua orang. Memasang .NET 8 Desktop Runtime dari Microsoft terlebih dulu jika PC Anda belum punya, lalu Rashnova. |
-| `Rashnova-1.1.0.msi` | Administrator yang memasang dengan alat mereka sendiri. Memerlukan .NET 8 Desktop Runtime yang sudah terpasang. |
+| **`Rashnova-1.2.0.msi`** | Semua orang. Memasang Rashnova dengan salinan .NET 10 miliknya sendiri, jadi tidak ada yang perlu dipasang lebih dulu. |
 | `SHA256SUMS.txt` | SHA-256 setiap file, untuk memeriksa unduhan Anda. |
 
-1. Unduh `Rashnova-Setup-1.1.0.exe` dari [rilis terbaru](https://github.com/sathvik-zoldyck/rashnova/releases/latest).
+1. Unduh `Rashnova-1.2.0.msi` dari [rilis terbaru](https://github.com/sathvik-zoldyck/rashnova/releases/latest). Jika browser Anda mengatakan file ini jarang diunduh, pilih **Keep** (langkah untuk tiap browser ada di [batasan yang diketahui](KNOWN_LIMITS.md)).
 2. **Periksa file-nya** (disarankan). Di PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-Setup-1.1.0.exe"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.0.msi"
    ```
    Hash harus sama persis dengan yang ada di `SHA256SUMS.txt` dan di catatan rilis.
 3. Jalankan. Windows SmartScreen menampilkan **"Windows protected your PC"** dengan penerbit tidak dikenal, karena
@@ -223,19 +225,19 @@ dan menyala lagi sendiri setelah restart.
 > Mematikan perekaman terus-menerus tidak pernah memerlukan PIN.
 
 
-**Sebelumnya memakai BlackBox 1.0.1?** Rashnova adalah nama baru BlackBox. Unduh dan pasang 1.1.0.
+**Sebelumnya memakai 1.1.0?** Pasang 1.2.0 di atasnya; catatan, PIN, dan pengaturan Anda tetap ada. **Sebelumnya memakai BlackBox 1.0.1?** Rashnova adalah nama baru BlackBox. Unduh dan pasang 1.2.0.
 
 <a name="requirements"></a>
 ## Persyaratan sistem
 
 - Windows 10 atau Windows 11, 64-bit (diuji di Windows 10)
-- Microsoft .NET 8 Desktop Runtime (Setup memasangnya jika belum ada)
+- Tidak ada yang lain: Rashnova membawa salinan Microsoft .NET 10 miliknya sendiri
 - Izin administrator untuk memasang, karena perekam berjalan sebagai layanan Windows
 
 <a name="privacy"></a>
 ## Privasi
 
-- **Hanya lokal.** Catatan ditulis dan disimpan di komputer Anda. Di 1.1.0 tidak ada akun dan tidak ada cloud, dan
+- **Hanya lokal.** Catatan ditulis dan disimpan di komputer Anda. Di versi ini tidak ada akun dan tidak ada cloud, dan
   Rashnova tidak mengirim data penggunaan.
 - **Dua permintaan kecil,** tidak satu pun membawa isi catatan Anda: pemeriksaan harian ke alcyonesecure.com untuk
   versi baru, dan selama Repair session, pemeriksaan waktu ke server waktu Microsoft.
@@ -243,8 +245,8 @@ dan menyala lagi sendiri setelah restart.
   dienkripsi, dan Rashnova hanya membukanya setelah PIN Anda diperiksa. Administrator komputer tetap bisa membacanya.
 - **Beri tahu orang yang memakai PC Anda.** Perekaman terus-menerus mencakup seluruh komputer, termasuk orang yang
   tidak pernah membuka Rashnova.
-- **Satu pengaturan Windows, dinyatakan dengan jelas.** Saat perekaman pertama kali dinyalakan, Rashnova menyalakan
-  pencatatan skrip PowerShell di Windows, dan mencatat nilai pengaturan sebelumnya. Rashnova tidak pernah mematikan
+- **Satu pengaturan Windows, dinyatakan dengan jelas.** Selama sesi Repair atau Handover, Rashnova menyalakan pencatatan
+  skrip PowerShell di Windows, dan mengembalikannya seperti semula saat sesi berakhir. Rashnova tidak pernah mematikan
   pengaturan yang dinyalakan orang lain.
 
 <a name="limits"></a>
@@ -255,9 +257,9 @@ Kami memublikasikan apa yang tidak dilakukan Rashnova, agar Anda bisa memutuskan
 - **Tidak ada yang bisa direkam saat komputer mati, sleep, atau sedang restart.** Sesi tetap berlanjut, dan laporan
   menunjukkan setiap gangguan dan lamanya.
 - **Administrator bisa membaca catatan.** Tidak ada program yang bisa menyembunyikan file-nya dari administrator Windows.
-- **Penginstal belum ditandatangani secara digital,** jadi Windows SmartScreen memberi peringatan sebelum dijalankan.
-- **Pemblokiran penyimpanan USB belum ada di 1.1.0.** Setiap drive USB dan setiap file yang disalin ke sana direkam;
-  pemblokiran hadir dalam pembaruan.
+- **Penginstal belum ditandatangani secara digital,** jadi browser Anda dan Windows SmartScreen mungkin memberi peringatan sebelum dijalankan.
+- **Pemblokiran penyimpanan USB menghentikan drive USB, bukan setiap cara memindahkan file.** Ponsel, slot kartu SD bawaan
+  komputer, dan drive jaringan tidak diblokir, dan drive yang sudah tercolok tetap berfungsi sampai dicabut.
 
 Daftar lengkap, dengan alasan dan rencana untuk masing-masing (dalam bahasa Inggris): **[KNOWN_LIMITS.md](KNOWN_LIMITS.md)**.
 

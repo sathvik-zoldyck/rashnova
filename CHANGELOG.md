@@ -3,6 +3,62 @@
 Every released version of Rashnova, newest first. Installers and their SHA-256 are attached to
 each [release](https://github.com/sathvik-zoldyck/rashnova/releases).
 
+## 1.2.0 (2026-10-05)
+
+Rashnova keeps a sealed, tamper-evident record of what happens on your Windows PC, so you can
+check afterwards what was done while someone else had it. This update adds Handover Mode and
+USB storage blocking, and makes restarts during a session read as what they are.
+
+It is still the free local recorder: everything is recorded and kept on your computer, and no
+account is needed.
+
+### New in 1.2.0
+
+- **Handover Mode.** For the times someone else uses your computer for a while: family, a
+  friend, a colleague. It records exactly what Repair Mode records, with the same sealed
+  report, and only your PIN ends it. It has its own button on the dashboard, its own page and
+  its own button in the quick panel, and past sessions say which mode each one was.
+- **A restart is not tampering.** A restart, a shutdown, a power cut or sleep during a session
+  is shown in the report with its length, and no longer marks the session Compromised. The
+  recorder being stopped while Windows kept running is recorded as tampering, and the session
+  reads Compromised.
+- **USB storage blocking.** Switch it on in Settings with your PIN. Memory sticks and external
+  disks no longer open, fast USB 3 drives included. A drive already plugged in keeps working
+  until it is unplugged. If someone switches USB storage back on outside Rashnova, that is
+  recorded as tampering and it is blocked again within seconds.
+- **Start with Windows.** Choose always-on recording and Rashnova opens in the tray when you
+  sign in, with no window, so Repair Mode and Handover Mode are a click away. It is its own
+  switch in Settings too, and Windows lists it in its Startup apps, where you can turn it off.
+- **PowerShell script logging only during a session.** Rashnova turns on Windows' PowerShell
+  script logging when a Repair or Handover session starts and puts it back as it was when the
+  session ends. 1.1.0 left it on between sessions.
+- **Clearer words.** Change PIN says which step you are on. The Readout's cards say plainly
+  what happened, every card can be opened, and a day marked partial is explained.
+- **Smaller fixes.** A file at the top of a drive names the drive. Windows' own System Restore
+  is no longer recorded as a person's program after the computer wakes. The tray icon uses far
+  less of the processor.
+- **One file that installs itself.** The download is now a single installer that brings
+  everything Rashnova needs, including its own copy of .NET 10. Nothing else is downloaded
+  during setup and nothing needs to be installed first. Microsoft supports .NET 10 until
+  November 2028; support for .NET 8, which 1.1.0 used, ends in November 2026.
+
+### Coming later
+
+Cloud backup, recovery from another device, location recording and the paid plan come in a
+later version.
+
+### Known limits
+
+See [KNOWN_LIMITS.md](KNOWN_LIMITS.md).
+
+### Upgrading
+
+**From 1.1.0:** Download and install 1.2.0 over 1.1.0. Your record, PIN and settings are kept. 1.1.0 was
+installed through a separate setup program; its leftover entry in Windows' installed apps list
+is removed, so Rashnova appears there once.
+
+**From BlackBox 1.0.1:** Rashnova is BlackBox's new name. Download and install 1.2.0.
+
 ## 1.1.0 (2026-10-05)
 
 Rashnova keeps a sealed, tamper-evident record of what happens on your Windows PC, so you can

@@ -158,6 +158,9 @@ Stichprobe der aktuellen Dateiaktivität (Monitor Now) oder öffnen Sie den letz
 
 <sub>Die Screenshots zeigen Rashnova mit einer Beispielsitzung (eine fiktive Nutzerin, "Riya").</sub>
 
+**Neu in 1.2.0:** Handover Mode, wenn Sie Ihren PC der Familie, einem Freund oder einem Kollegen überlassen, mit
+demselben versiegelten Bericht; das Blockieren von USB-Speichern; und Start with Windows. Siehe das [Änderungsprotokoll](CHANGELOG.md).
+
 <a name="never"></a>
 ## Was es nie aufzeichnet
 
@@ -180,7 +183,7 @@ Microsoft Edge geöffnet wurde. Er sagt nicht, was im Kontoauszug stand.
 <a name="how"></a>
 ## So funktioniert es
 
-1. **Installieren.** Setup installiert Rashnova und seinen Hintergrundrekorder.
+1. **Installieren.** Der Installer installiert Rashnova und seinen Hintergrundrekorder.
 2. **PIN festlegen.** Die PIN prüft der Rekorder, nicht das App-Fenster.
 3. **Vor der Übergabe:** **Repair Mode > Activate**, dann Ihre PIN.
 4. **Übergeben.** Alles unter "Was es tut" wird in ein versiegeltes Protokoll geschrieben.
@@ -195,7 +198,7 @@ nicht, und startet nach einem Neustart von selbst wieder.
 | --- | --- |
 | **Quiet** | Das Protokoll ist geprüft und vollständig, und nichts von hoher Bedeutung ist passiert. |
 | **Notable** | Mindestens ein hohes (high) oder kritisches (critical) Ereignis: lesenswert. |
-| **Compromised** | Das Protokoll hat eine Lücke innerhalb der Sitzung (der Computer war aus, im Energiesparmodus oder startete neu, oder die Überwachung war unterbrochen) oder zeigt einen Eingriff, kann also nicht für die ganze Sitzung bürgen. |
+| **Compromised** | Der Rekorder von Rashnova wurde angehalten, während Windows weiterlief, oder das Protokoll zeigt einen Eingriff, kann also nicht für die ganze Sitzung bürgen. Ein Neustart, ein Herunterfahren oder der Energiesparmodus wird mit seiner Dauer angezeigt und zählt nicht gegen die Sitzung. |
 | **Chain broken** | Das Protokoll lässt sich nicht verifizieren. Alles wird trotzdem angezeigt, als ungeprüft markiert. |
 
 <a name="download"></a>
@@ -203,14 +206,13 @@ nicht, und startet nach einem Neustart von selbst wieder.
 
 | Datei | Wofür |
 | --- | --- |
-| **`Rashnova-Setup-1.1.0.exe`** | Für alle. Installiert zuerst Microsofts .NET 8 Desktop Runtime, falls Ihr PC sie nicht hat, dann Rashnova. |
-| `Rashnova-1.1.0.msi` | Für Administratoren, die mit eigenen Werkzeugen verteilen. Benötigt eine bereits installierte .NET 8 Desktop Runtime. |
+| **`Rashnova-1.2.0.msi`** | Für alle. Installiert Rashnova mit einer eigenen Kopie von .NET 10, sodass vorher nichts anderes installiert werden muss. |
 | `SHA256SUMS.txt` | Der SHA-256 jeder Datei, um Ihren Download zu prüfen. |
 
-1. Laden Sie `Rashnova-Setup-1.1.0.exe` aus der [neuesten Version](https://github.com/sathvik-zoldyck/rashnova/releases/latest) herunter.
+1. Laden Sie `Rashnova-1.2.0.msi` aus der [neuesten Version](https://github.com/sathvik-zoldyck/rashnova/releases/latest) herunter. Meldet Ihr Browser, dass die Datei nicht häufig heruntergeladen wird, wählen Sie **Keep** (die Schritte für jeden Browser stehen in den [bekannten Grenzen](KNOWN_LIMITS.md)).
 2. **Prüfen Sie die Datei** (empfohlen). In PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-Setup-1.1.0.exe"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.0.msi"
    ```
    Der Hash muss exakt mit dem in `SHA256SUMS.txt` und in den Versionshinweisen übereinstimmen.
 3. Starten Sie sie. Windows SmartScreen zeigt **"Windows protected your PC"** mit unbekanntem Herausgeber an, weil
@@ -226,19 +228,19 @@ nicht, und startet nach einem Neustart von selbst wieder.
 > Das Ausschalten der dauerhaften Aufzeichnung braucht nie die PIN.
 
 
-**Sie kommen von BlackBox 1.0.1?** Rashnova ist der neue Name von BlackBox. Laden Sie 1.1.0 herunter und installieren Sie es.
+**Sie kommen von 1.1.0?** Installieren Sie 1.2.0 darüber; Ihr Protokoll, Ihre PIN und Ihre Einstellungen bleiben erhalten. **Sie kommen von BlackBox 1.0.1?** Rashnova ist der neue Name von BlackBox. Laden Sie 1.2.0 herunter und installieren Sie es.
 
 <a name="requirements"></a>
 ## Systemvoraussetzungen
 
 - Windows 10 oder Windows 11, 64 Bit (getestet unter Windows 10)
-- Microsoft .NET 8 Desktop Runtime (Setup installiert sie, falls sie fehlt)
+- Sonst nichts: Rashnova bringt eine eigene Kopie von Microsoft .NET 10 mit
 - Administratorfreigabe zur Installation, weil der Rekorder als Windows-Dienst läuft
 
 <a name="privacy"></a>
 ## Datenschutz
 
-- **Nur lokal.** Das Protokoll wird auf Ihrem Computer geschrieben und aufbewahrt. In 1.1.0 gibt es kein Konto und
+- **Nur lokal.** Das Protokoll wird auf Ihrem Computer geschrieben und aufbewahrt. In dieser Version gibt es kein Konto und
   keine Cloud, und Rashnova sendet keine Nutzungsdaten.
 - **Zwei kleine Anfragen,** keine mit Inhalten aus Ihrem Protokoll: eine tägliche Prüfung auf alcyonesecure.com, ob es
   eine neue Version gibt, und während einer Repair session ein Zeitabgleich mit Microsofts Zeitserver.
@@ -247,9 +249,9 @@ nicht, und startet nach einem Neustart von selbst wieder.
   Administratoren des Computers können sie trotzdem lesen.
 - **Sagen Sie es den Menschen, die Ihren PC nutzen.** Die dauerhafte Aufzeichnung gilt für den ganzen Computer, auch
   für Menschen, die Rashnova nie öffnen.
-- **Eine Windows-Einstellung, offen gesagt.** Wenn die Aufzeichnung zum ersten Mal eingeschaltet wird, schaltet Rashnova
-  die PowerShell-Skriptprotokollierung von Windows ein und vermerkt, wie die Einstellung vorher war. Eine Einstellung, die
-  jemand anderes eingeschaltet hat, schaltet es nie aus.
+- **Eine Windows-Einstellung, offen gesagt.** Während einer Repair- oder Handover-Sitzung schaltet Rashnova die
+  PowerShell-Skriptprotokollierung von Windows ein und stellt sie am Ende der Sitzung wieder so her, wie sie war. Eine
+  Einstellung, die jemand anderes eingeschaltet hat, schaltet es nie aus.
 
 <a name="limits"></a>
 ## Bekannte Grenzen
@@ -259,9 +261,10 @@ Wir veröffentlichen, was Rashnova nicht tut, damit Sie anhand der Fakten entsch
 - **Während der Computer aus ist, schläft oder neu startet, kann nichts aufgezeichnet werden.** Die Sitzung läuft
   weiter, und der Bericht zeigt jede Unterbrechung und ihre Dauer.
 - **Administratoren können das Protokoll lesen.** Kein Programm kann seine Dateien vor einem Windows-Administrator verbergen.
-- **Der Installer ist noch nicht digital signiert,** daher warnt Windows SmartScreen vor dem Start.
-- **Das Blockieren von USB-Speichern ist nicht in 1.1.0.** Jedes USB-Laufwerk und jede darauf kopierte Datei wird
-  aufgezeichnet; das Blockieren kommt mit einem Update.
+- **Der Installer ist noch nicht digital signiert,** daher können Ihr Browser und Windows SmartScreen vor dem Start warnen.
+- **Das Blockieren von USB-Speichern stoppt USB-Laufwerke, nicht jeden Weg, Dateien zu bewegen.** Telefone, im Computer
+  eingebaute SD-Kartenleser und Netzlaufwerke werden nicht blockiert, und ein bereits eingestecktes Laufwerk funktioniert
+  weiter, bis es abgezogen wird.
 
 Die vollständige Liste, mit dem Grund für jede Grenze und dem Geplanten (auf Englisch): **[KNOWN_LIMITS.md](KNOWN_LIMITS.md)**.
 

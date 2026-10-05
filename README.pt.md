@@ -155,6 +155,9 @@ de arquivos ao vivo (Monitor Now) ou abra o último relatório.
 
 <sub>As capturas mostram o Rashnova com uma sessão de exemplo (uma usuária fictícia, "Riya").</sub>
 
+**Novo no 1.2.0:** Handover Mode, para emprestar o seu PC à família, a um amigo ou a um colega, com o mesmo relatório
+selado; bloqueio de armazenamento USB; e Start with Windows. Veja o [registro de alterações](CHANGELOG.md).
+
 <a name="never"></a>
 ## O que ele nunca registra
 
@@ -177,7 +180,7 @@ Microsoft Edge às 15:01:16. Não diz o que havia no extrato.
 <a name="how"></a>
 ## Como funciona
 
-1. **Instale.** O Setup instala o Rashnova e o seu gravador em segundo plano.
+1. **Instale.** O instalador instala o Rashnova e o seu gravador em segundo plano.
 2. **Defina um PIN.** O PIN é verificado pelo gravador, não pela janela do aplicativo.
 3. **Antes de entregar:** **Repair Mode > Activate**, depois o seu PIN.
 4. **Entregue.** Tudo em "O que ele faz" é gravado em um registro selado.
@@ -192,7 +195,7 @@ não, e volta a iniciar sozinho depois de uma reinicialização.
 | --- | --- |
 | **Quiet** | O registro é verificado, está completo e nada de alta importância aconteceu. |
 | **Notable** | Pelo menos um evento alto (high) ou crítico (critical): vale a leitura. |
-| **Compromised** | O registro tem uma lacuna dentro da sessão (o computador estava desligado, suspenso ou reiniciando, ou a vigilância foi interrompida) ou mostra interferência, então não pode responder pela sessão inteira. |
+| **Compromised** | O gravador do Rashnova foi parado enquanto o Windows continuava funcionando, ou o registro mostra interferência, então não pode responder pela sessão inteira. Uma reinicialização, um desligamento ou a suspensão aparecem com a sua duração e não contam contra a sessão. |
 | **Chain broken** | O registro não se verifica. Tudo continua sendo mostrado, marcado como não verificado. |
 
 <a name="download"></a>
@@ -200,14 +203,13 @@ não, e volta a iniciar sozinho depois de uma reinicialização.
 
 | Arquivo | Para quem |
 | --- | --- |
-| **`Rashnova-Setup-1.1.0.exe`** | Para todos. Instala primeiro o .NET 8 Desktop Runtime da Microsoft, se o seu PC não tiver, e depois o Rashnova. |
-| `Rashnova-1.1.0.msi` | Para administradores que implantam com as próprias ferramentas. Exige o .NET 8 Desktop Runtime já instalado. |
+| **`Rashnova-1.2.0.msi`** | Para todos. Instala o Rashnova com a sua própria cópia do .NET 10, então não é preciso instalar mais nada antes. |
 | `SHA256SUMS.txt` | O SHA-256 de cada arquivo, para verificar o seu download. |
 
-1. Baixe `Rashnova-Setup-1.1.0.exe` da [versão mais recente](https://github.com/sathvik-zoldyck/rashnova/releases/latest).
+1. Baixe `Rashnova-1.2.0.msi` da [versão mais recente](https://github.com/sathvik-zoldyck/rashnova/releases/latest). Se o seu navegador disser que o arquivo não é baixado com frequência, escolha **Keep** (os passos para cada navegador estão nos [limites conhecidos](KNOWN_LIMITS.md)).
 2. **Verifique o arquivo** (recomendado). No PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-Setup-1.1.0.exe"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.0.msi"
    ```
    O hash deve ser exatamente igual ao de `SHA256SUMS.txt` e ao das notas de versão.
 3. Execute-o. O Windows SmartScreen mostra **"Windows protected your PC"** com um editor desconhecido, porque o
@@ -222,19 +224,19 @@ não, e volta a iniciar sozinho depois de uma reinicialização.
 > Desligar a gravação contínua nunca pede o PIN.
 
 
-**Vem do BlackBox 1.0.1?** Rashnova é o novo nome do BlackBox. Baixe e instale o 1.1.0.
+**Vem do 1.1.0?** Instale o 1.2.0 por cima; o seu registro, PIN e configurações são mantidos. **Vem do BlackBox 1.0.1?** Rashnova é o novo nome do BlackBox. Baixe e instale o 1.2.0.
 
 <a name="requirements"></a>
 ## Requisitos do sistema
 
 - Windows 10 ou Windows 11, 64 bits (testado no Windows 10)
-- Microsoft .NET 8 Desktop Runtime (o Setup instala se estiver faltando)
+- Nada mais: o Rashnova traz a sua própria cópia do Microsoft .NET 10
 - Permissão de administrador para instalar, porque o gravador funciona como um serviço do Windows
 
 <a name="privacy"></a>
 ## Privacidade
 
-- **Só local.** O registro é gravado e guardado no seu computador. No 1.1.0 não há conta nem nuvem, e o Rashnova não
+- **Só local.** O registro é gravado e guardado no seu computador. Nesta versão não há conta nem nuvem, e o Rashnova não
   envia dados de uso.
 - **Duas pequenas solicitações,** nenhuma com nada do seu registro: uma verificação diária em alcyonesecure.com de uma
   versão nova e, durante uma Repair session, uma verificação da hora com o servidor de hora da Microsoft.
@@ -243,8 +245,8 @@ não, e volta a iniciar sozinho depois de uma reinicialização.
   podem lê-la.
 - **Avise quem usa o seu PC.** A gravação contínua cobre o computador inteiro, inclusive pessoas que nunca abrem o
   Rashnova.
-- **Uma configuração do Windows, dita com clareza.** Na primeira vez que a gravação é ligada, o Rashnova liga o registro
-  de scripts do PowerShell do Windows e anota como a configuração estava antes. Nunca desliga uma configuração que outra
+- **Uma configuração do Windows, dita com clareza.** Durante uma sessão Repair ou Handover, o Rashnova liga o registro de
+  scripts do PowerShell do Windows e o deixa como estava quando a sessão termina. Nunca desliga uma configuração que outra
   pessoa ligou.
 
 <a name="limits"></a>
@@ -255,9 +257,10 @@ Publicamos o que o Rashnova não faz, para que você decida com os fatos. O mais
 - **Nada pode ser registrado enquanto o computador está desligado, suspenso ou reiniciando.** A sessão continua, e o
   relatório mostra cada interrupção e a sua duração.
 - **Administradores podem ler o registro.** Nenhum programa consegue esconder os seus arquivos de um administrador do Windows.
-- **O instalador ainda não tem assinatura digital,** por isso o Windows SmartScreen avisa antes de executá-lo.
-- **O bloqueio de armazenamento USB não está no 1.1.0.** Cada pendrive e cada arquivo copiado para ele é registrado;
-  o bloqueio chega em uma atualização.
+- **O instalador ainda não tem assinatura digital,** por isso o seu navegador e o Windows SmartScreen podem avisar antes de executá-lo.
+- **O bloqueio de armazenamento USB para unidades USB, não todas as formas de mover arquivos.** Celulares, leitores de cartão
+  SD embutidos no computador e unidades de rede não são bloqueados, e uma unidade já conectada continua funcionando até ser
+  desconectada.
 
 A lista completa, com o motivo de cada limite e o que está planejado (em inglês): **[KNOWN_LIMITS.md](KNOWN_LIMITS.md)**.
 
