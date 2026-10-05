@@ -49,29 +49,12 @@ from one.
 A Repair session ends only when you end it with your PIN. If the computer restarts, is switched
 off or goes to sleep, or Rashnova's recorder is stopped during a session, recording pauses and
 resumes by itself as soon as the computer starts or wakes again, before anyone signs in. The
-session's report shows each interruption and how long it lasted. Nothing done in that time can be recorded, including
-anything done by starting the computer from another drive. After such a restart, Rashnova's
-encrypted copy of the record stays paused until you enter your PIN.
+session's report shows each interruption and how long it lasted. Nothing done in that time can
+be recorded. After such a restart, Rashnova's encrypted copy of the record stays paused until you
+enter your PIN.
 *Why:* nothing runs while the computer is off, and Rashnova opens the encrypted copy only after
 your PIN is checked.
 *Planned:* nothing; this is a deliberate trade.
-
-**A crash or power cut can lose the last few seconds.**
-Some activity is held for a few seconds before it is written: repeated events are grouped
-into one entry, and a rename, a new file or a program's save is held briefly so it can be
-written down correctly (with the file's new name, or as one save instead of several steps).
-Everything held is written when Rashnova stops normally and at the end of every Repair
-session. If Windows crashes or the power is cut, the last few seconds of activity may be
-missing from the record.
-*Why:* writing each step at once would record an editor's save as several confusing entries
-and a rename without its new name.
-*Planned:* nothing; this is a deliberate trade.
-
-**Changes to Windows settings (the registry) cannot be attributed to a person.**
-They are recorded, with the setting and the time, but Windows does not say which program or
-account made the change. Wherever the report shows one, it says so.
-*Why:* a limit of what Windows reports.
-*Planned:* no fix in sight.
 
 ## Not in this version
 

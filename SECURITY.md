@@ -53,7 +53,7 @@ Out of scope:
 
 - anything that needs administrator rights on the computer to begin with. An administrator can
   change any permission on Windows; this is stated in our [known limits](KNOWN_LIMITS.md);
-- what cannot be recorded while the computer is off, asleep, restarting, or started from another
-  drive (also a stated limit; the record shows each such interruption);
+- what cannot be recorded while the computer is off, asleep or restarting (also a stated limit;
+  the record shows each such interruption);
 - problems in Windows, in the .NET runtime, or in other software Rashnova does not ship;
 - reports from automated scanners with no demonstrated impact.
