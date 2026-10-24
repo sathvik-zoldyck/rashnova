@@ -36,8 +36,7 @@ Rashnova memberi Anda putusan (verdict) dan laporan tentang apa yang dibuka, dis
 program apa yang dijalankan, dan drive USB apa yang dicolokkan.
 
 Setiap entri disegel ke entri sebelumnya, sehingga catatan menunjukkan jika ada yang diubah atau dihapus di dalamnya,
-dan menunjukkan setiap rentang waktu ketika tidak ada yang bisa direkam. Semuanya tetap di komputer Anda. Tanpa akun,
-tanpa cloud, tanpa telemetri.
+dan menunjukkan setiap rentang waktu ketika tidak ada yang bisa direkam. Catatan Anda tetap di komputer Anda. Tidak perlu akun, dan tanpa telemetri.
 
 
 > [!NOTE]
@@ -152,12 +151,35 @@ langsung (Monitor Now), atau buka laporan terakhir.
 
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+
+<img src="assets/screenshots/proof.png" alt="Sebuah bukti: sertifikatnya, waktu yang disaksikan pihak lain, dan apa yang tidak dibuktikannya">
+
+</td>
+<td width="50%" valign="top">
+
+**Proofs.** Buat bukti untuk file apa pun: apa tepatnya file itu dan kapan ia ada, disaksikan oleh otoritas stempel waktu independen dan blockchain Bitcoin. Hanya sidik jari bergaram yang dikirim, tidak pernah filenya. Siapa pun bisa memeriksa bukti nanti di browser, tanpa Rashnova. Gratis, sebanyak yang Anda mau.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**Origin.** Letakkan sebuah file dan Rashnova memberi tahu dari mana asalnya, apakah berubah, dan kapan ia ada, dari apa yang dibawa file itu: Content Credentials (C2PA), detail foto, stempel waktu, dan bukti. Dibaca di komputer Anda; tidak ada yang diunggah.
+
+</td>
+<td width="50%" valign="top">
+
+<img src="assets/screenshots/origin.png" alt="Origin: apa yang dikatakan sebuah foto tentang dirinya, dan apa yang membuktikan kapan ia ada">
+
+</td>
+</tr>
 </table>
 
 <sub>Tangkapan layar menampilkan Rashnova dengan sesi contoh (pengguna fiktif, "Riya").</sub>
 
-**Baru di 1.2.0:** Handover Mode, untuk meminjamkan PC Anda kepada keluarga, teman, atau rekan kerja, dengan laporan
-tersegel yang sama; pemblokiran penyimpanan USB; dan Start with Windows. Lihat [catatan perubahan](CHANGELOG.md).
+**Baru di 1.3.0:** desain baru, Proofs dan Origin, dan lebih banyak yang direkam selama sesi: folder yang dibuka di File Explorer, judul tab browser, Wi-Fi yang tersambung dan terputus, upaya menghapus jejak, tangkapan layar, dan peringatan keamanan Windows sendiri. Lihat [catatan perubahan](CHANGELOG.md).
 
 <a name="never"></a>
 ## Yang tidak pernah direkam
@@ -169,11 +191,9 @@ Rashnova merekam **bahwa** sesuatu terjadi, bukan apa yang ada di layar. Rashnov
 - layar Anda, sebagai gambar atau video
 - kamera atau mikrofon Anda
 - isi dokumen, foto, email, atau pesan Anda
-- halaman web yang Anda kunjungi, atau isinya
+- alamat halaman web yang Anda kunjungi, atau isinya
 
-Ada dua hal yang direkam dan perlu Anda ketahui. Selama Repair session, perintah PowerShell direkam saat dijalankan,
-begitu juga baris perintah awal lengkap dari setiap program yang dijalankan seseorang; jadi browser yang dibuka dari
-sebuah tautan menunjukkan tautan itu.
+Ada beberapa hal yang direkam dan perlu Anda ketahui. Selama sesi, perintah PowerShell direkam saat dijalankan, begitu juga baris perintah awal lengkap dari setiap program yang dijalankan seseorang; jadi browser yang dibuka dari sebuah tautan menunjukkan tautan itu. Judul tab browser juga direkam, tidak pernah alamat atau halamannya.
 
 Laporan menyebutkan, misalnya, bahwa `Bank_Statement_Aug2026.pdf` dibuka dari `Documents\Finance` oleh
 Microsoft Edge pada 15:01:16. Laporan tidak menyebutkan isi rekening koran itu.
@@ -183,9 +203,9 @@ Microsoft Edge pada 15:01:16. Laporan tidak menyebutkan isi rekening koran itu.
 
 1. **Pasang.** Penginstal memasang Rashnova dan perekam latarnya.
 2. **Atur PIN.** PIN diperiksa oleh perekam, bukan oleh jendela aplikasi.
-3. **Sebelum diserahkan:** **Repair Mode > Activate**, lalu PIN Anda.
+3. **Sebelum diserahkan:** **Repair Mode > Start Repair Mode**, lalu PIN Anda.
 4. **Serahkan.** Semua yang ada di "Apa yang dilakukannya" ditulis ke catatan tersegel.
-5. **Saat kembali:** **Deactivate**, lalu PIN Anda. Anda mendapat putusan, laporan, dan pemeriksaan rantai.
+5. **Saat kembali:** **End and seal**, lalu PIN Anda. Anda mendapat putusan, laporan, dan pemeriksaan rantai.
 
 Perekam berjalan sebagai layanan Windows, jadi terus merekam baik ada yang membuka jendela Rashnova maupun tidak,
 dan menyala lagi sendiri setelah restart.
@@ -204,13 +224,13 @@ dan menyala lagi sendiri setelah restart.
 
 | File | Untuk |
 | --- | --- |
-| **`Rashnova-1.2.1.msi`** | Semua orang. Memasang Rashnova dengan salinan .NET 10 miliknya sendiri, jadi tidak ada yang perlu dipasang lebih dulu. |
+| **`Rashnova-1.3.0.msi`** | Semua orang. Memasang Rashnova dengan salinan .NET 10 miliknya sendiri, jadi tidak ada yang perlu dipasang lebih dulu. |
 | `SHA256SUMS.txt` | SHA-256 setiap file, untuk memeriksa unduhan Anda. |
 
-1. Unduh `Rashnova-1.2.1.msi` dari [rilis terbaru](https://github.com/sathvik-zoldyck/rashnova/releases/latest). Jika browser Anda mengatakan file ini jarang diunduh, pilih **Keep** (langkah untuk tiap browser ada di [batasan yang diketahui](KNOWN_LIMITS.md)).
+1. Unduh `Rashnova-1.3.0.msi` dari [rilis terbaru](https://github.com/sathvik-zoldyck/rashnova/releases/latest). Jika browser Anda mengatakan file ini jarang diunduh, pilih **Keep** (langkah untuk tiap browser ada di [batasan yang diketahui](KNOWN_LIMITS.md)).
 2. **Periksa file-nya** (disarankan). Di PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.1.msi"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.3.0.msi"
    ```
    Hash harus sama persis dengan yang ada di `SHA256SUMS.txt` dan di catatan rilis.
 3. Jalankan. Windows SmartScreen menampilkan **"Windows protected your PC"** dengan penerbit tidak dikenal, karena
@@ -225,7 +245,7 @@ dan menyala lagi sendiri setelah restart.
 > Mematikan perekaman terus-menerus tidak pernah memerlukan PIN.
 
 
-**Sebelumnya memakai 1.1.0?** Pasang 1.2.1 di atasnya; catatan, PIN, dan pengaturan Anda tetap ada. **Sebelumnya memakai BlackBox 1.0.1?** Rashnova adalah nama baru BlackBox. Unduh dan pasang 1.2.1.
+**Sebelumnya memakai versi Rashnova yang lebih lama?** Pasang 1.3.0 di atasnya; catatan, PIN, dan pengaturan Anda tetap ada. **Sebelumnya memakai BlackBox 1.0.1?** Rashnova adalah nama baru BlackBox. Unduh dan pasang 1.3.0.
 
 <a name="requirements"></a>
 ## Persyaratan sistem
@@ -237,10 +257,12 @@ dan menyala lagi sendiri setelah restart.
 <a name="privacy"></a>
 ## Privasi
 
-- **Hanya lokal.** Catatan ditulis dan disimpan di komputer Anda. Di versi ini tidak ada akun dan tidak ada cloud, dan
+- **Lokal lebih dulu.** Catatan ditulis dan disimpan di komputer Anda. Akun bersifat opsional, dan
   Rashnova tidak mengirim data penggunaan.
-- **Dua permintaan kecil,** tidak satu pun membawa isi catatan Anda: pemeriksaan harian ke alcyonesecure.com untuk
-  versi baru, dan selama Repair session, pemeriksaan waktu ke server waktu Microsoft.
+- **Beberapa permintaan kecil,** tidak satu pun membawa isi catatan Anda: pemeriksaan harian ke alcyonesecure.com untuk
+  versi baru; selama sesi, pemeriksaan waktu ke server waktu Microsoft; saat Anda membuat bukti, sidik jari bergaram (tidak
+  pernah filenya) ke layanan stempel waktu publik dan kalender Bitcoin; di Origin, nomor blok Bitcoin, hanya saat Anda
+  memintanya; dan, hanya jika Anda masuk, data masuk dan paket Anda.
 - **Siapa yang bisa membaca catatan.** Akun Windows yang mengatur PIN, dan administrator komputer. Salinan kedua
   dienkripsi, dan Rashnova hanya membukanya setelah PIN Anda diperiksa. Administrator komputer tetap bisa membacanya.
 - **Beri tahu orang yang memakai PC Anda.** Perekaman terus-menerus mencakup seluruh komputer, termasuk orang yang

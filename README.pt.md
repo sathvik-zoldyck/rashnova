@@ -36,7 +36,7 @@ o PC voltar, encerre-a, e o Rashnova lhe dá um veredito e um relatório do que 
 quais programas foram executados e quais pendrives foram conectados.
 
 Cada entrada é selada à anterior, então o registro mostra se algo nele foi alterado ou removido, e mostra cada
-intervalo em que nada pôde ser registrado. Tudo fica no seu computador. Sem conta, sem nuvem, sem telemetria.
+intervalo em que nada pôde ser registrado. O seu registro fica no seu computador. Sem precisar de conta, e sem telemetria.
 
 
 > [!NOTE]
@@ -151,12 +151,35 @@ de arquivos ao vivo (Monitor Now) ou abra o último relatório.
 
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+
+<img src="assets/screenshots/proof.png" alt="Uma prova: o seu certificado, a hora testemunhada por outros e o que ela não prova">
+
+</td>
+<td width="50%" valign="top">
+
+**Proofs.** Faça uma prova de qualquer arquivo: o que ele é exatamente e quando existia, testemunhado por autoridades independentes de carimbo de tempo e pela blockchain do Bitcoin. Só uma impressão digital com sal é enviada, nunca o arquivo. Qualquer pessoa pode verificar uma prova depois, no navegador, sem o Rashnova. Grátis, quantas quiser.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**Origin.** Solte um arquivo e o Rashnova diz de onde ele veio, se mudou e quando existia, a partir do que o arquivo carrega: Content Credentials (C2PA), dados da foto, carimbos de tempo e provas. É lido no seu computador; nada é enviado.
+
+</td>
+<td width="50%" valign="top">
+
+<img src="assets/screenshots/origin.png" alt="Origin: o que uma foto diz sobre si mesma, e o que prova quando ela existia">
+
+</td>
+</tr>
 </table>
 
 <sub>As capturas mostram o Rashnova com uma sessão de exemplo (uma usuária fictícia, "Riya").</sub>
 
-**Novo no 1.2.0:** Handover Mode, para emprestar o seu PC à família, a um amigo ou a um colega, com o mesmo relatório
-selado; bloqueio de armazenamento USB; e Start with Windows. Veja o [registro de alterações](CHANGELOG.md).
+**Novo no 1.3.0:** um novo design, Proofs e Origin, e mais no registro durante uma sessão: pastas abertas no Explorador de Arquivos, títulos das abas do navegador, redes Wi-Fi conectadas e desconectadas, tentativas de apagar rastros, capturas de tela e os próprios alertas de segurança do Windows. Veja o [registro de alterações](CHANGELOG.md).
 
 <a name="never"></a>
 ## O que ele nunca registra
@@ -168,11 +191,9 @@ O Rashnova registra **que** algo aconteceu, não o que estava na tela. Ele não 
 - a sua tela, em imagens ou vídeo
 - a sua câmera ou o seu microfone
 - o conteúdo dos seus documentos, fotos, e-mails ou mensagens
-- as páginas web que você visita, nem o que há nelas
+- o endereço das páginas web que você visita, nem o que há nelas
 
-Vale saber duas coisas que ele registra. Durante uma Repair session, os comandos do PowerShell são registrados ao
-serem executados, assim como a linha de inicialização completa de cada programa que uma pessoa inicia; por isso, um
-navegador aberto a partir de um link mostra esse link.
+Vale saber algumas coisas que ele registra. Durante uma sessão, os comandos do PowerShell são registrados ao serem executados, assim como a linha de inicialização completa de cada programa que uma pessoa inicia; por isso, um navegador aberto a partir de um link mostra esse link. O título de uma aba do navegador também é registrado, nunca o endereço nem a página.
 
 Um relatório diz, por exemplo, que `Bank_Statement_Aug2026.pdf` foi aberto de `Documents\Finance` pelo
 Microsoft Edge às 15:01:16. Não diz o que havia no extrato.
@@ -182,9 +203,9 @@ Microsoft Edge às 15:01:16. Não diz o que havia no extrato.
 
 1. **Instale.** O instalador instala o Rashnova e o seu gravador em segundo plano.
 2. **Defina um PIN.** O PIN é verificado pelo gravador, não pela janela do aplicativo.
-3. **Antes de entregar:** **Repair Mode > Activate**, depois o seu PIN.
+3. **Antes de entregar:** **Repair Mode > Start Repair Mode**, depois o seu PIN.
 4. **Entregue.** Tudo em "O que ele faz" é gravado em um registro selado.
-5. **Ao receber de volta:** **Deactivate**, depois o seu PIN. Você recebe um veredito, um relatório e a verificação da cadeia.
+5. **Ao receber de volta:** **End and seal**, depois o seu PIN. Você recebe um veredito, um relatório e a verificação da cadeia.
 
 O gravador funciona como um serviço do Windows, então continua gravando quer alguém abra a janela do Rashnova ou
 não, e volta a iniciar sozinho depois de uma reinicialização.
@@ -203,13 +224,13 @@ não, e volta a iniciar sozinho depois de uma reinicialização.
 
 | Arquivo | Para quem |
 | --- | --- |
-| **`Rashnova-1.2.1.msi`** | Para todos. Instala o Rashnova com a sua própria cópia do .NET 10, então não é preciso instalar mais nada antes. |
+| **`Rashnova-1.3.0.msi`** | Para todos. Instala o Rashnova com a sua própria cópia do .NET 10, então não é preciso instalar mais nada antes. |
 | `SHA256SUMS.txt` | O SHA-256 de cada arquivo, para verificar o seu download. |
 
-1. Baixe `Rashnova-1.2.1.msi` da [versão mais recente](https://github.com/sathvik-zoldyck/rashnova/releases/latest). Se o seu navegador disser que o arquivo não é baixado com frequência, escolha **Keep** (os passos para cada navegador estão nos [limites conhecidos](KNOWN_LIMITS.md)).
+1. Baixe `Rashnova-1.3.0.msi` da [versão mais recente](https://github.com/sathvik-zoldyck/rashnova/releases/latest). Se o seu navegador disser que o arquivo não é baixado com frequência, escolha **Keep** (os passos para cada navegador estão nos [limites conhecidos](KNOWN_LIMITS.md)).
 2. **Verifique o arquivo** (recomendado). No PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.1.msi"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.3.0.msi"
    ```
    O hash deve ser exatamente igual ao de `SHA256SUMS.txt` e ao das notas de versão.
 3. Execute-o. O Windows SmartScreen mostra **"Windows protected your PC"** com um editor desconhecido, porque o
@@ -224,7 +245,7 @@ não, e volta a iniciar sozinho depois de uma reinicialização.
 > Desligar a gravação contínua nunca pede o PIN.
 
 
-**Vem do 1.1.0?** Instale o 1.2.1 por cima; o seu registro, PIN e configurações são mantidos. **Vem do BlackBox 1.0.1?** Rashnova é o novo nome do BlackBox. Baixe e instale o 1.2.1.
+**Vem de uma versão anterior do Rashnova?** Instale o 1.3.0 por cima; o seu registro, PIN e configurações são mantidos. **Vem do BlackBox 1.0.1?** Rashnova é o novo nome do BlackBox. Baixe e instale o 1.3.0.
 
 <a name="requirements"></a>
 ## Requisitos do sistema
@@ -236,10 +257,12 @@ não, e volta a iniciar sozinho depois de uma reinicialização.
 <a name="privacy"></a>
 ## Privacidade
 
-- **Só local.** O registro é gravado e guardado no seu computador. Nesta versão não há conta nem nuvem, e o Rashnova não
+- **Primeiro, local.** O registro é gravado e guardado no seu computador. A conta é opcional, e o Rashnova não
   envia dados de uso.
-- **Duas pequenas solicitações,** nenhuma com nada do seu registro: uma verificação diária em alcyonesecure.com de uma
-  versão nova e, durante uma Repair session, uma verificação da hora com o servidor de hora da Microsoft.
+- **Algumas pequenas solicitações,** nenhuma com nada do seu registro: uma verificação diária em alcyonesecure.com de uma
+  versão nova; durante uma sessão, uma verificação da hora com o servidor de hora da Microsoft; ao fazer uma prova, uma
+  impressão digital com sal (nunca o arquivo) para serviços públicos de carimbo de tempo e calendários do Bitcoin; no Origin,
+  um número de bloco do Bitcoin, só quando você pede; e, só se você entrar na conta, o seu login e o seu plano.
 - **Quem pode ler o registro.** A conta do Windows que definiu o PIN e os administradores do computador. A segunda
   cópia é criptografada, e o Rashnova só a abre depois que o seu PIN é verificado. Os administradores do computador ainda
   podem lê-la.

@@ -3,6 +3,85 @@
 Every released version of Rashnova, newest first. Installers and their SHA-256 are attached to
 each [release](https://github.com/sathvik-zoldyck/rashnova/releases).
 
+## 1.3.0 (2026-10-25)
+
+The biggest update yet: a new design across every screen, proofs you can make of any file, Origin
+to check where a file came from, and more of what happens during a session in the record.
+
+The recorder is still free and still works without an account. Your record is kept on your
+computer.
+
+### New in 1.3.0
+
+- **A new look.** One calm design across the whole app. The sidebar has three groups: Watch
+  (Repair Mode, Handover Mode, Monitor Now, Live log, Sessions), the Readout, and Proof (Proofs,
+  Origin).
+- **Proofs.** Make a proof of any file: it fixes exactly what the file is and when it existed,
+  witnessed by independent time stamp authorities and the Bitcoin blockchain. Only a salted
+  fingerprint is sent to them, never the file. Anyone can check a proof later in a browser, without
+  Rashnova, with the checker inside every proof or at [alcyonesecure.com/proof/verify.html](https://www.alcyonesecure.com/proof/verify.html). Each
+  proof comes with a certificate (three designs free). Proofs are free, as many as you like.
+  **Prove this session** and **Prove the report** make a proof of a session's or the Readout's report
+  in one click.
+- **Origin.** Drop a file and Rashnova says where it came from, whether it changed, and when it
+  existed, from what the file and its proofs carry: Content Credentials (C2PA), photo details, RFC
+  3161 time stamps, OpenTimestamps and Rashnova proofs. It is read on your computer; nothing is
+  uploaded.
+- **More in the record during a session:**
+  - folders opened in File Explorer;
+  - browser tab titles (the title only, never the address or the page; a private window is noted
+    without its title);
+  - Wi-Fi and other networks joined and left;
+  - covering tracks: Windows' recent files list cleared, the Recycle Bin emptied, restore points,
+    backups or event logs deleted, deleted files wiped from free space;
+  - screenshots saved and screen snips started;
+  - Windows' own security alerts, kept as Windows wrote them: Microsoft Defender finding something
+    or being turned off, Windows Firewall turned off, an event log cleared, a new service installed,
+    someone added to Administrators.
+
+  A program reading files for itself (a build tool, a sync app) is no longer shown as a person
+  opening them.
+- **Wrong PINs are recorded**, naming the Windows account they came from. Wrong PINs tried from
+  another Windows account no longer make you wait.
+- **You choose how it records** when you set it up: Always On, or only during a session.
+- **Handover Mode keeps a custody ticket:** who the computer went to, their role and why. Taking it
+  back needs your PIN, and past handovers are listed.
+- **Monitor Now** runs for as long as you pick, from 30 seconds to 1 hour, and keeps going while
+  you use the rest of the app.
+- **Sessions** shows every Repair and Handover session on a calendar, each with its verdict.
+- **Notifications only when it matters:** a USB drive during a session, the recorder not answering,
+  Monitor Now finished, and a proof's Bitcoin time confirmed. Each can be turned off in Settings.
+- **Updates shown inside the app.** When a new version is out, the app and the tray say so, with
+  what changed and the file's SHA-256. You install it yourself. Settings has **Check now**.
+- **An optional account.** Sign in with an email and password, in the app or through your browser.
+  Everything in the recorder works without one.
+- **Uninstall from the app:** keep the record (the default) or remove everything.
+- **Fixes:** after a restart, entering your PIN now waits for the recorder to be ready instead of
+  failing; the live feed can no longer hold up the record; signing out forgets that account's plan.
+
+### What leaves your computer
+
+Nothing from your record. Rashnova makes a few small requests that carry nothing from it: a daily
+check for a newer version; during a session, a check of the time, so a changed clock shows in the
+record; when you make a proof, a salted fingerprint (never the file) to the time stamp services and
+the Bitcoin calendars; in Origin, a Bitcoin block number, only when you ask; and only if you sign
+in, your sign in and your plan.
+
+### Known limits
+
+- **The installer is not code-signed yet.** Your browser and Windows SmartScreen may warn about it.
+  On Windows 11, Smart App Control may hold back a brand new version until Microsoft has checked
+  it; we send every version to Microsoft when we publish it.
+- **Not open yet:** the cloud copy and buying the Personal plan. Both appear in the app as coming.
+- See [KNOWN_LIMITS.md](KNOWN_LIMITS.md).
+
+### Upgrading
+
+**From 1.2.1, 1.2.0 or 1.1.0:** download and install 1.3.0 over it. Your record, PIN and settings
+are kept.
+
+**From BlackBox 1.0.1:** Rashnova is BlackBox's new name. Download and install 1.3.0.
+
 ## 1.2.1 (2026-10-05)
 
 A fix update for 1.2.0. It closes two ways someone with administrator rights could get around the

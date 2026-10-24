@@ -33,8 +33,8 @@ comes back, end it, and Rashnova gives you a verdict and a report of what was op
 renamed and deleted, which programs ran, and which USB drives were plugged in.
 
 Every entry is sealed to the one before it, so the record shows if anything in it was altered or
-removed, and it shows every stretch where nothing could be recorded. Everything stays on your
-computer. No account, no cloud, no telemetry.
+removed, and it shows every stretch where nothing could be recorded. Your record stays on your
+computer. No account needed, and no telemetry.
 
 
 > [!NOTE]
@@ -151,12 +151,42 @@ file activity (Monitor Now), or open the last report.
 
 </td>
 </tr>
+<tr>
+<td width="50%" valign="top">
+
+<img src="assets/screenshots/proof.png" alt="A proof: its certificate, the time witnessed by others, and what it does not prove">
+
+</td>
+<td width="50%" valign="top">
+
+**Proofs.** Make a proof of any file: exactly what it is, and when it existed, witnessed by
+independent time stamp authorities and the Bitcoin blockchain. Only a salted fingerprint is sent,
+never the file. Anyone can check a proof later in a browser, without Rashnova. Free, as many as
+you like.
+
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
+
+**Origin.** Drop a file and Rashnova says where it came from, whether it changed and when it
+existed, from what the file carries: Content Credentials (C2PA), photo details, time stamps and
+proofs. It is read on your computer; nothing is uploaded.
+
+</td>
+<td width="50%" valign="top">
+
+<img src="assets/screenshots/origin.png" alt="Origin: what a photo says about itself, and what proves when it existed">
+
+</td>
+</tr>
 </table>
 
 <sub>Screenshots show Rashnova with a sample session (a fictional user, "Riya").</sub>
 
-**New in 1.2.0:** Handover Mode, for lending your PC to family, a friend or a colleague, with
-the same sealed report; USB storage blocking; and Start with Windows. See the [changelog](CHANGELOG.md).
+**New in 1.3.0:** a new design, Proofs and Origin, and more in the record during a session:
+folders opened in File Explorer, browser tab titles, Wi-Fi joined and left, covering tracks,
+screenshots, and Windows' own security alerts. See the [changelog](CHANGELOG.md).
 
 <a name="never"></a>
 ## What it never records
@@ -168,11 +198,12 @@ Rashnova records **that** something happened, not what was on the screen. It doe
 - your screen, as pictures or video
 - your camera or microphone
 - the contents of your documents, photos, emails or messages
-- the web pages you visit, or what is on them
+- the address of a web page you visit, or what is on it
 
-Two things it does record are worth knowing. During a Repair session, PowerShell commands are
+Some things it does record are worth knowing. During a session, PowerShell commands are
 recorded as they run, and so is the full start-up line of each program a person starts, so a
-browser opened from a link shows that link.
+browser opened from a link shows that link. A browser tab's title is recorded too, never its
+address or the page.
 
 A report says, for example, that `Bank_Statement_Aug2026.pdf` was opened from
 `Documents\Finance` by Microsoft Edge at 15:01:16. It does not say what the statement contained.
@@ -182,9 +213,9 @@ A report says, for example, that `Bank_Statement_Aug2026.pdf` was opened from
 
 1. **Install.** The installer sets up Rashnova and its background recorder.
 2. **Set a PIN.** The PIN is checked by the recorder, not by the app window.
-3. **Before the handover:** **Repair Mode > Activate**, then your PIN.
+3. **Before the handover:** **Repair Mode > Start Repair Mode**, then your PIN.
 4. **Hand it over.** Everything in "What it does" is written to a sealed record.
-5. **Get it back:** **Deactivate**, then your PIN. You get a verdict, a report and the chain check.
+5. **Get it back:** **End and seal**, then your PIN. You get a verdict, a report and the chain check.
 
 The recorder runs as a Windows service, so it keeps recording whether or not anyone opens the
 Rashnova window, and it starts again on its own after a restart.
@@ -203,13 +234,13 @@ Rashnova window, and it starts again on its own after a restart.
 
 | File | Use it for |
 | --- | --- |
-| **`Rashnova-1.2.1.msi`** | Everyone. Installs Rashnova with its own copy of .NET 10, so nothing else needs installing first. |
+| **`Rashnova-1.3.0.msi`** | Everyone. Installs Rashnova with its own copy of .NET 10, so nothing else needs installing first. |
 | `SHA256SUMS.txt` | The SHA-256 of each file, to check your download. |
 
-1. Download `Rashnova-1.2.1.msi` from the [latest release](https://github.com/sathvik-zoldyck/rashnova/releases/latest). If your browser says the file isn't commonly downloaded, choose **Keep** (the steps for each browser are in [Known limits](KNOWN_LIMITS.md)).
+1. Download `Rashnova-1.3.0.msi` from the [latest release](https://github.com/sathvik-zoldyck/rashnova/releases/latest). If your browser says the file isn't commonly downloaded, choose **Keep** (the steps for each browser are in [Known limits](KNOWN_LIMITS.md)).
 2. **Check the file** (recommended). In PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.2.1.msi"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.3.0.msi"
    ```
    The hash must match the one in `SHA256SUMS.txt` and in the release notes, exactly.
 3. Run it. Windows SmartScreen shows **"Windows protected your PC"** with an unknown publisher,
@@ -225,7 +256,7 @@ Rashnova window, and it starts again on its own after a restart.
 > Switching always-on recording off never needs the PIN.
 
 
-**Coming from 1.1.0?** Install 1.2.1 over it; your record, PIN and settings are kept. **Coming from BlackBox 1.0.1?** Rashnova is BlackBox's new name. Download and install 1.2.1.
+**Coming from an earlier Rashnova?** Install 1.3.0 over it; your record, PIN and settings are kept. **Coming from BlackBox 1.0.1?** Rashnova is BlackBox's new name. Download and install 1.3.0.
 
 <a name="requirements"></a>
 ## System requirements
@@ -237,11 +268,13 @@ Rashnova window, and it starts again on its own after a restart.
 <a name="privacy"></a>
 ## Privacy
 
-- **Local only.** The record is written and kept on your computer. There is no account and no
-  cloud in this version, and Rashnova sends no usage data.
-- **Two small requests,** neither carrying anything from your record: a daily check of
-  alcyonesecure.com for a newer version, and, during a Repair session, a check of the time against
-  Microsoft's time server.
+- **Local first.** The record is written and kept on your computer. An account is optional, and
+  Rashnova sends no usage data.
+- **A few small requests,** none carrying anything from your record: a daily check of
+  alcyonesecure.com for a newer version; during a session, a check of the time against Microsoft's
+  time server; when you make a proof, a salted fingerprint (never the file) to public time stamp
+  services and Bitcoin calendars; in Origin, a Bitcoin block number, only when you ask; and, only if
+  you sign in, your sign in and plan.
 - **Who can read the record.** The Windows account that set the PIN, and the computer's
   administrators. The second copy is encrypted, and Rashnova opens it only after your PIN is
   checked. The computer's administrators can still read it.
