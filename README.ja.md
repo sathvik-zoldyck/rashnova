@@ -181,9 +181,7 @@ Rashnova は防止策ではありません。証拠です。起きたことを�
 
 <sub>スクリーンショットはサンプルのセッション（架空のユーザー "Riya"）で Rashnova を表示したものです。</sub>
 
-**1.3.0 の新機能：** 新しいデザイン、Proofs と Origin、そしてセッション中の記録の拡充：エクスプローラーで開いたフォルダー、
-ブラウザーのタブのタイトル、Wi-Fi への接続と切断、痕跡を消す操作、スクリーンショット、Windows 自身のセキュリティ警告。
-[変更履歴](CHANGELOG.md)をご覧ください。
+**1.3.1 の新機能：** ウイルス対策ソフトと一緒でもよりスムーズなインストール、誤った警告の減少、より強力な Origin（ファイル自身が作成に使ったと示す AI ツール、PDF の以前の版、Seal this check）、そして人と AI ツールに向けて明記した Rashnova の利用条件。 [変更履歴](CHANGELOG.md)をご覧ください。
 
 <a name="never"></a>
 ## 決して記録しないもの
@@ -230,13 +228,13 @@ Rashnova が記録するのは、何かが起きた**という事実**であり�
 
 | ファイル | 用途 |
 | --- | --- |
-| **`Rashnova-1.3.0.msi`** | すべての方向け。.NET 10 の専用コピーと一緒に Rashnova をインストールするため、事前に他のものをインストールする必要はありません。 |
+| **`Rashnova-1.3.1.msi`** | すべての方向け。.NET 10 の専用コピーと一緒に Rashnova をインストールするため、事前に他のものをインストールする必要はありません。 |
 | `SHA256SUMS.txt` | 各ファイルの SHA-256。ダウンロードの確認用です。 |
 
-1. [最新リリース](https://github.com/sathvik-zoldyck/rashnova/releases/latest)から `Rashnova-1.3.0.msi` をダウンロードします。ブラウザーが「一般的にダウンロードされていない」ファイルだと表示した場合は **Keep** を選びます（ブラウザーごとの手順は[既知の制限](KNOWN_LIMITS.md)にあります）。
+1. [最新リリース](https://github.com/sathvik-zoldyck/rashnova/releases/latest)から `Rashnova-1.3.1.msi` をダウンロードします。ブラウザーが「一般的にダウンロードされていない」ファイルだと表示した場合は **Keep** を選びます（ブラウザーごとの手順は[既知の制限](KNOWN_LIMITS.md)にあります）。
 2. **ファイルを確認します**（推奨）。PowerShell で：
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.3.0.msi"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.3.1.msi"
    ```
    ハッシュが `SHA256SUMS.txt` およびリリースノートのものと完全に一致する必要があります。
 3. 実行します。インストーラーはまだコード署名されていないため、Windows SmartScreen が発行元不明として
@@ -251,7 +249,7 @@ Rashnova が記録するのは、何かが起きた**という事実**であり�
 > 常時記録をオフにするのに PIN は一切不要です。
 
 
-**以前の Rashnova をお使いですか？** その上に 1.3.0 をインストールしてください。記録、PIN、設定はそのまま残ります。**BlackBox 1.0.1 をお使いでしたか？** Rashnova は BlackBox の新しい名前です。1.3.0 をダウンロードしてインストールしてください。
+**以前の Rashnova をお使いですか？** その上に 1.3.1 をインストールしてください。記録、PIN、設定はそのまま残ります。**BlackBox 1.0.1 をお使いでしたか？** Rashnova は BlackBox の新しい名前です。1.3.1 をダウンロードしてインストールしてください。
 
 <a name="requirements"></a>
 ## システム要件
@@ -309,7 +307,7 @@ Rashnova は 1 日に 1 回 alcyonesecure.com で新しいバージョンを確�
 
 Rashnova はプロプライエタリソフトウェアで、ご自身が所有する、または監視を許可されたデバイスで無料で使用できます。
 [LICENSE](LICENSE) と[利用条件](https://www.alcyonesecure.com/terms)（英語。こちらが正式なものです）をご覧ください。
-このリポジトリの文書と画像は © Alcyone Secure です。
+このリポジトリの文書と画像は © Alcyone Secure LLP です。 Rashnova のリバースエンジニアリング、逆コンパイル、複製は、本人によるものも、本人のために AI ツールが行うものも認められません。AI エージェント向けには [AGENTS.md](AGENTS.md) に記載しています。
 
 ---
 

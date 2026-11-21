@@ -179,7 +179,7 @@ langsung (Monitor Now), atau buka laporan terakhir.
 
 <sub>Tangkapan layar menampilkan Rashnova dengan sesi contoh (pengguna fiktif, "Riya").</sub>
 
-**Baru di 1.3.0:** desain baru, Proofs dan Origin, dan lebih banyak yang direkam selama sesi: folder yang dibuka di File Explorer, judul tab browser, Wi-Fi yang tersambung dan terputus, upaya menghapus jejak, tangkapan layar, dan peringatan keamanan Windows sendiri. Lihat [catatan perubahan](CHANGELOG.md).
+**Baru di 1.3.1:** terpasang lebih mulus berdampingan dengan antivirus, lebih sedikit peringatan palsu, Origin yang lebih kuat (alat AI yang menurut file itu dipakai untuk membuatnya, versi-versi lama sebuah PDF, dan Seal this check), serta ketentuan Rashnova yang dinyatakan dengan jelas untuk manusia dan alat AI. Lihat [catatan perubahan](CHANGELOG.md).
 
 <a name="never"></a>
 ## Yang tidak pernah direkam
@@ -224,13 +224,13 @@ dan menyala lagi sendiri setelah restart.
 
 | File | Untuk |
 | --- | --- |
-| **`Rashnova-1.3.0.msi`** | Semua orang. Memasang Rashnova dengan salinan .NET 10 miliknya sendiri, jadi tidak ada yang perlu dipasang lebih dulu. |
+| **`Rashnova-1.3.1.msi`** | Semua orang. Memasang Rashnova dengan salinan .NET 10 miliknya sendiri, jadi tidak ada yang perlu dipasang lebih dulu. |
 | `SHA256SUMS.txt` | SHA-256 setiap file, untuk memeriksa unduhan Anda. |
 
-1. Unduh `Rashnova-1.3.0.msi` dari [rilis terbaru](https://github.com/sathvik-zoldyck/rashnova/releases/latest). Jika browser Anda mengatakan file ini jarang diunduh, pilih **Keep** (langkah untuk tiap browser ada di [batasan yang diketahui](KNOWN_LIMITS.md)).
+1. Unduh `Rashnova-1.3.1.msi` dari [rilis terbaru](https://github.com/sathvik-zoldyck/rashnova/releases/latest). Jika browser Anda mengatakan file ini jarang diunduh, pilih **Keep** (langkah untuk tiap browser ada di [batasan yang diketahui](KNOWN_LIMITS.md)).
 2. **Periksa file-nya** (disarankan). Di PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.3.0.msi"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.3.1.msi"
    ```
    Hash harus sama persis dengan yang ada di `SHA256SUMS.txt` dan di catatan rilis.
 3. Jalankan. Windows SmartScreen menampilkan **"Windows protected your PC"** dengan penerbit tidak dikenal, karena
@@ -245,7 +245,7 @@ dan menyala lagi sendiri setelah restart.
 > Mematikan perekaman terus-menerus tidak pernah memerlukan PIN.
 
 
-**Sebelumnya memakai versi Rashnova yang lebih lama?** Pasang 1.3.0 di atasnya; catatan, PIN, dan pengaturan Anda tetap ada. **Sebelumnya memakai BlackBox 1.0.1?** Rashnova adalah nama baru BlackBox. Unduh dan pasang 1.3.0.
+**Sebelumnya memakai versi Rashnova yang lebih lama?** Pasang 1.3.1 di atasnya; catatan, PIN, dan pengaturan Anda tetap ada. **Sebelumnya memakai BlackBox 1.0.1?** Rashnova adalah nama baru BlackBox. Unduh dan pasang 1.3.1.
 
 <a name="requirements"></a>
 ## Persyaratan sistem
@@ -305,7 +305,7 @@ catatan rilis dan SHA-256-nya. Lihat [log perubahan](CHANGELOG.md).
 
 Rashnova adalah perangkat lunak berpemilik, gratis digunakan di perangkat milik Anda atau yang berwenang Anda awasi.
 Lihat [LICENSE](LICENSE) dan [ketentuan](https://www.alcyonesecure.com/terms) (dalam bahasa Inggris; itulah yang
-berlaku). Dokumen dan gambar di repositori ini © Alcyone Secure.
+berlaku). Dokumen dan gambar di repositori ini © Alcyone Secure LLP. Rashnova tidak boleh direkayasa balik, didekompilasi, atau disalin, baik oleh seseorang maupun oleh alat AI atas namanya; [AGENTS.md](AGENTS.md) menyatakan hal ini untuk agen AI.
 
 ---
 

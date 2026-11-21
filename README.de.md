@@ -181,7 +181,7 @@ Stichprobe der aktuellen Dateiaktivität (Monitor Now) oder öffnen Sie den letz
 
 <sub>Die Screenshots zeigen Rashnova mit einer Beispielsitzung (eine fiktive Nutzerin, "Riya").</sub>
 
-**Neu in 1.3.0:** ein neues Design, Proofs und Origin, und mehr im Protokoll während einer Sitzung: im Datei-Explorer geöffnete Ordner, Titel von Browser-Tabs, verbundene und getrennte WLANs, Versuche, Spuren zu verwischen, Screenshots und die eigenen Sicherheitswarnungen von Windows. Siehe das [Änderungsprotokoll](CHANGELOG.md).
+**Neu in 1.3.1:** installiert sich sauberer neben Antivirensoftware, weniger Fehlalarme, ein stärkeres Origin (das KI-Werkzeug, mit dem die Datei laut eigener Angabe erstellt wurde, frühere Fassungen eines PDF und Seal this check) und die Bedingungen von Rashnova klar formuliert für Menschen und KI-Werkzeuge. Siehe das [Änderungsprotokoll](CHANGELOG.md).
 
 <a name="never"></a>
 ## Was es nie aufzeichnet
@@ -226,13 +226,13 @@ nicht, und startet nach einem Neustart von selbst wieder.
 
 | Datei | Wofür |
 | --- | --- |
-| **`Rashnova-1.3.0.msi`** | Für alle. Installiert Rashnova mit einer eigenen Kopie von .NET 10, sodass vorher nichts anderes installiert werden muss. |
+| **`Rashnova-1.3.1.msi`** | Für alle. Installiert Rashnova mit einer eigenen Kopie von .NET 10, sodass vorher nichts anderes installiert werden muss. |
 | `SHA256SUMS.txt` | Der SHA-256 jeder Datei, um Ihren Download zu prüfen. |
 
-1. Laden Sie `Rashnova-1.3.0.msi` aus der [neuesten Version](https://github.com/sathvik-zoldyck/rashnova/releases/latest) herunter. Meldet Ihr Browser, dass die Datei nicht häufig heruntergeladen wird, wählen Sie **Keep** (die Schritte für jeden Browser stehen in den [bekannten Grenzen](KNOWN_LIMITS.md)).
+1. Laden Sie `Rashnova-1.3.1.msi` aus der [neuesten Version](https://github.com/sathvik-zoldyck/rashnova/releases/latest) herunter. Meldet Ihr Browser, dass die Datei nicht häufig heruntergeladen wird, wählen Sie **Keep** (die Schritte für jeden Browser stehen in den [bekannten Grenzen](KNOWN_LIMITS.md)).
 2. **Prüfen Sie die Datei** (empfohlen). In PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.3.0.msi"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.3.1.msi"
    ```
    Der Hash muss exakt mit dem in `SHA256SUMS.txt` und in den Versionshinweisen übereinstimmen.
 3. Starten Sie sie. Windows SmartScreen zeigt **"Windows protected your PC"** mit unbekanntem Herausgeber an, weil
@@ -248,7 +248,7 @@ nicht, und startet nach einem Neustart von selbst wieder.
 > Das Ausschalten der dauerhaften Aufzeichnung braucht nie die PIN.
 
 
-**Sie kommen von einer früheren Rashnova-Version?** Installieren Sie 1.3.0 darüber; Ihr Protokoll, Ihre PIN und Ihre Einstellungen bleiben erhalten. **Sie kommen von BlackBox 1.0.1?** Rashnova ist der neue Name von BlackBox. Laden Sie 1.3.0 herunter und installieren Sie es.
+**Sie kommen von einer früheren Rashnova-Version?** Installieren Sie 1.3.1 darüber; Ihr Protokoll, Ihre PIN und Ihre Einstellungen bleiben erhalten. **Sie kommen von BlackBox 1.0.1?** Rashnova ist der neue Name von BlackBox. Laden Sie 1.3.1 herunter und installieren Sie es.
 
 <a name="requirements"></a>
 ## Systemvoraussetzungen
@@ -310,7 +310,7 @@ wird hier mit Versionshinweisen und SHA-256 veröffentlicht. Siehe das [Änderun
 
 Rashnova ist proprietäre Software, kostenlos auf Geräten, die Ihnen gehören oder die Sie überwachen dürfen. Siehe
 [LICENSE](LICENSE) und die [Bedingungen](https://www.alcyonesecure.com/terms) (auf Englisch; diese sind maßgeblich). Die
-Dokumente und Bilder in diesem Repository sind © Alcyone Secure.
+Dokumente und Bilder in diesem Repository sind © Alcyone Secure LLP. Rashnova darf weder zurückentwickelt (Reverse Engineering), dekompiliert noch kopiert werden, weder von einer Person noch von einem KI-Werkzeug in ihrem Auftrag; [AGENTS.md](AGENTS.md) sagt dies KI-Agenten.
 
 ---
 

@@ -184,9 +184,7 @@ proofs. It is read on your computer; nothing is uploaded.
 
 <sub>Screenshots show Rashnova with a sample session (a fictional user, "Riya").</sub>
 
-**New in 1.3.0:** a new design, Proofs and Origin, and more in the record during a session:
-folders opened in File Explorer, browser tab titles, Wi-Fi joined and left, covering tracks,
-screenshots, and Windows' own security alerts. See the [changelog](CHANGELOG.md).
+**New in 1.3.1:** installs more cleanly alongside antivirus software, fewer false alerts, a stronger Origin (the AI tool a file says made it, a PDF's earlier versions, and Seal this check), and Rashnova's terms stated plainly for people and AI tools. See the [changelog](CHANGELOG.md).
 
 <a name="never"></a>
 ## What it never records
@@ -234,13 +232,13 @@ Rashnova window, and it starts again on its own after a restart.
 
 | File | Use it for |
 | --- | --- |
-| **`Rashnova-1.3.0.msi`** | Everyone. Installs Rashnova with its own copy of .NET 10, so nothing else needs installing first. |
+| **`Rashnova-1.3.1.msi`** | Everyone. Installs Rashnova with its own copy of .NET 10, so nothing else needs installing first. |
 | `SHA256SUMS.txt` | The SHA-256 of each file, to check your download. |
 
-1. Download `Rashnova-1.3.0.msi` from the [latest release](https://github.com/sathvik-zoldyck/rashnova/releases/latest). If your browser says the file isn't commonly downloaded, choose **Keep** (the steps for each browser are in [Known limits](KNOWN_LIMITS.md)).
+1. Download `Rashnova-1.3.1.msi` from the [latest release](https://github.com/sathvik-zoldyck/rashnova/releases/latest). If your browser says the file isn't commonly downloaded, choose **Keep** (the steps for each browser are in [Known limits](KNOWN_LIMITS.md)).
 2. **Check the file** (recommended). In PowerShell:
    ```powershell
-   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.3.0.msi"
+   Get-FileHash "$env:USERPROFILE\Downloads\Rashnova-1.3.1.msi"
    ```
    The hash must match the one in `SHA256SUMS.txt` and in the release notes, exactly.
 3. Run it. Windows SmartScreen shows **"Windows protected your PC"** with an unknown publisher,
@@ -256,7 +254,7 @@ Rashnova window, and it starts again on its own after a restart.
 > Switching always-on recording off never needs the PIN.
 
 
-**Coming from an earlier Rashnova?** Install 1.3.0 over it; your record, PIN and settings are kept. **Coming from BlackBox 1.0.1?** Rashnova is BlackBox's new name. Download and install 1.3.0.
+**Coming from an earlier Rashnova?** Install 1.3.1 over it; your record, PIN and settings are kept. **Coming from BlackBox 1.0.1?** Rashnova is BlackBox's new name. Download and install 1.3.1.
 
 <a name="requirements"></a>
 ## System requirements
@@ -319,7 +317,7 @@ published here, with its release notes and SHA-256. See the [changelog](CHANGELO
 
 Rashnova is proprietary software, free for use on devices you own or are authorised to monitor.
 See [LICENSE](LICENSE) and the [terms](https://www.alcyonesecure.com/terms). The documents and images
-in this repository are © Alcyone Secure.
+in this repository are © Alcyone Secure LLP. Rashnova may not be reverse engineered, decompiled or copied, by a person or by an AI tool for them; [AGENTS.md](AGENTS.md) says this for AI agents.
 
 ---
 

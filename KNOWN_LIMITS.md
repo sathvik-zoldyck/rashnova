@@ -1,6 +1,6 @@
-# Rashnova 1.3.0: known limits
+# Rashnova 1.3.1: known limits
 
-What Rashnova 1.3.0 does not do, or does not do yet. Each entry says what the limit is, why, and
+What Rashnova 1.3.1 does not do, or does not do yet. Each entry says what the limit is, why, and
 what is planned. We publish this so you can decide with the facts; if a limit changes, it changes
 here first.
 
@@ -29,8 +29,18 @@ Microsoft when we publish it; once Microsoft has checked it, the same file opens
 new, unsigned version has neither on its first day.
 *Planned:* a signed installer.
 
+**Upgrading from 1.3.0 can stop with "a network resource that is unavailable".**
+Some antivirus programs, Microsoft Defender among them, flagged the 1.3.0 installer by mistake and
+quarantined the copy of it that Windows keeps to update or remove a program. Windows then cannot
+replace 1.3.0 and asks for "Rashnova-1.3.0.msi". Choose Cancel; nothing is changed. Restore the
+quarantined file in your antivirus (in Windows Security: Virus & threat protection, Protection
+history, then Restore), and install 1.3.1 again. Your record, PIN and settings are kept.
+*Why:* Windows needs the installer of the version it is replacing.
+*Planned:* 1.3.1 ships without the obfuscation that made antivirus programs suspicious, so later
+updates should not meet this.
+
 **Windows only, 64-bit.**
-Rashnova 1.3.0 is built for 64-bit Windows 10 and 11, and has been tested on Windows 10.
+Rashnova 1.3.1 is built for 64-bit Windows 10 and 11, and has been tested on Windows 10.
 It brings its own copy of Microsoft's .NET 10, used only by Rashnova: nothing else is
 downloaded during setup, and nothing else needs to be installed first.
 *Planned:* nothing announced for other systems in this version.

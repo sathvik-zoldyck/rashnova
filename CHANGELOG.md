@@ -3,6 +3,62 @@
 Every released version of Rashnova, newest first. Installers and their SHA-256 are attached to
 each [release](https://github.com/sathvik-zoldyck/rashnova/releases).
 
+## 1.3.1 (2026-11-21)
+
+An update for 1.3.0 that installs and runs more cleanly alongside antivirus software, raises fewer
+false alerts, makes Origin stronger, and states Rashnova's terms plainly for people and for AI
+tools. Everything in 1.3.0 stays as it was.
+
+### Installs more cleanly
+
+- **No more scrambled code.** Earlier versions ran Rashnova's program files through an obfuscator,
+  a tool many antivirus engines treat with suspicion, and some flagged Rashnova because of it. 1.3.1
+  ships without it. Your record's protection never depended on it: the record is sealed by its chain
+  of fingerprints and Rashnova's signing keys, which are unchanged.
+- **Microsoft's .NET 10 security update** (10.0.15) is the copy of .NET that Rashnova brings with it.
+- **The company's legal name.** Files, the installer and About now name Alcyone Secure LLP.
+
+### Fewer false alerts
+
+- **A program reading its own files is not a person.** A database, a game or a tool reading the
+  files in its own folder (a local database server checking its data every minute, for example) was
+  counted as "Worth a look" and as a person's action, even with nobody at the computer. It is now
+  recorded as what it is: a program at work. A program reading your photos or documents is still
+  worth a look, and a sensitive file name is still critical.
+
+### Origin
+
+- **Origin never shows an empty card.** For any file it says what the file itself shows: its real
+  format, how it was saved, its colour profile, what its name suggests, and where Windows recorded it
+  was downloaded from (kept on your computer, never put into a proof). When a photo has no camera
+  details, it says why: WhatsApp, Instagram and screenshots remove them.
+- **It names the AI a file says it was made with.** Origin reads the labels AI tools leave in files
+  (IPTC, China's AIGC label, Stable Diffusion, ComfyUI and others) and names the tool, always as
+  "the file says", because such labels are not signed.
+- **It warns when a signature leaves part of a picture out.** Content Credentials that check out but
+  whose signature does not cover the whole picture are said as such, never as "unchanged since".
+- **A PDF's own history.** A PDF saved again keeps what it was. Origin says how many times it was
+  saved, and gives back each earlier version exactly as it was. Signing a PDF is not counted as a
+  change.
+- **JFIF pictures.** A .jfif file (how Windows and many websites save a JPEG) is checked as the
+  picture it is.
+- **Seal this check.** Save what Origin found as a report and prove the report and the file
+  together, so anyone can later see what the check showed, and when.
+
+### Rashnova's terms, plainly
+
+A legal notice now comes with Rashnova, installed beside its programs (AGENTS.md, also in this
+repository) and carried inside them. It says, for people and for AI tools, what the licence permits
+and what it does not: Rashnova may not be reverse engineered, decompiled or copied. What is welcome
+stays open: using it, checking proofs, building tools for its published formats, and reporting
+security issues privately. The full terms are at https://www.alcyonesecure.com/terms .
+
+### Upgrading
+
+Install 1.3.1 over 1.3.0, 1.2.x or 1.1.0; your record, PIN and settings are kept. If Windows asks
+for "Rashnova-1.3.0.msi" during the upgrade, an antivirus program has quarantined the copy Windows
+keeps: see [Known limits](KNOWN_LIMITS.md).
+
 ## 1.3.0 (2026-10-25)
 
 The biggest update yet: a new design across every screen, proofs you can make of any file, Origin
